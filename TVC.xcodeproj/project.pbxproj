@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		ED0D9793283844E1003789A0 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0D9792283844E1003789A0 /* TableViewCell.swift */; };
+		ED0D9795283859EE003789A0 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED0D9794283859EE003789A0 /* SecondViewController.swift */; };
 		ED7DBAB2282F1EF50013FBA7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7DBAB1282F1EF50013FBA7 /* AppDelegate.swift */; };
 		ED7DBAB4282F1EF50013FBA7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED7DBAB3282F1EF50013FBA7 /* SceneDelegate.swift */; };
 		ED7DBAB9282F1EF50013FBA7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ED7DBAB7282F1EF50013FBA7 /* Main.storyboard */; };
@@ -17,6 +19,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		ED0D9792283844E1003789A0 /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		ED0D9794283859EE003789A0 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		ED7DBAAE282F1EF50013FBA7 /* TVC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED7DBAB1282F1EF50013FBA7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ED7DBAB3282F1EF50013FBA7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,6 +70,8 @@
 				ED7DBABF282F1EF70013FBA7 /* LaunchScreen.storyboard */,
 				ED7DBAC2282F1EF70013FBA7 /* Info.plist */,
 				ED7DBABA282F1EF50013FBA7 /* TVC.xcdatamodeld */,
+				ED0D9792283844E1003789A0 /* TableViewCell.swift */,
+				ED0D9794283859EE003789A0 /* SecondViewController.swift */,
 			);
 			path = TVC;
 			sourceTree = "<group>";
@@ -141,6 +147,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED0D9795283859EE003789A0 /* SecondViewController.swift in Sources */,
+				ED0D9793283844E1003789A0 /* TableViewCell.swift in Sources */,
 				ED7DBABC282F1EF50013FBA7 /* TVC.xcdatamodeld in Sources */,
 				ED7DBAB2282F1EF50013FBA7 /* AppDelegate.swift in Sources */,
 				ED7DBAB4282F1EF50013FBA7 /* SceneDelegate.swift in Sources */,

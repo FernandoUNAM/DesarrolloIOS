@@ -9,9 +9,17 @@ import UIKit
 
 class TableViewController: UITableViewController {
 
+    
+    // MARK: PROPERTIRES
+    
+    var names: [String] = ["miguel","jose","juan"]
+    
+    // MARK: OUTLETS
+    @IBOutlet weak var nameinDetail: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -23,21 +31,19 @@ class TableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 10
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return names.count
     }
 
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath)
-
-        // Configure the cell...
+        let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
         
-        cell.textLabel?.text = "fin >"
+        cell.labelinCell.text = names[indexPath.row]
         
         return cell
     }
@@ -78,14 +84,22 @@ class TableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
-
+    
+    func showData(dato:String){
+        print(dato)
+    }
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+       
+        let index = tableView.indexPathForSelectedRow
+        
+        let secondViewController = segue.destination as! SecondViewController
+        
+        secondViewController.string = names[index!.row]
+        
+        secondViewController.table = self
     }
-    */
 
 }
