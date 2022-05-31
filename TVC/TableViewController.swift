@@ -22,7 +22,7 @@ class TableViewController: UITableViewController {
         
         
         // self.clearsSelectionOnViewWillAppear = false
-
+        
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
@@ -42,6 +42,8 @@ class TableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "TableViewCell", for: indexPath) as! TableViewCell
+        
+        // Esta linea pasa el nombre de la celda al viewcontroller 2
         
         cell.labelinCell.text = names[indexPath.row]
         
