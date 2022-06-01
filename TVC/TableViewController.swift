@@ -14,6 +14,9 @@ class TableViewController: UITableViewController {
     
     var names: [String] = ["miguel","jose","juan"]
     
+    // Comentario
+    var ejemplo: String = ""
+    
     // MARK: OUTLETS
     @IBOutlet weak var nameinDetail: UILabel!
     
