@@ -17,6 +17,10 @@ class TableViewController: UITableViewController {
     // Comentario
     var ejemplo: String = ""
     
+    // Agregué un nuevo cambio con una nueva variable
+    
+    var ejemplo2: String = ""
+    
     // MARK: OUTLETS
     @IBOutlet weak var nameinDetail: UILabel!
     
