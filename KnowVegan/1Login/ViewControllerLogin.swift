@@ -22,6 +22,7 @@ class ViewControllerLogin: UIViewController {
         searchFruts()
         startUpParameters ()
         print ("luchis es mi mejor enemigo")
+        print("Gracias")
 
     }
     
