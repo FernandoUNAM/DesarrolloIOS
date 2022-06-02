@@ -161,6 +161,8 @@
                     </view>
                     <connections>
                         <outlet property="ButtonHomePage1" destination="G1n-0p-9n9" id="EkE-MT-y9L"/>
+                        <outlet property="PasswordField" destination="X17-NS-nRx" id="xuJ-uA-42e"/>
+                        <outlet property="UserField" destination="x8e-wQ-nzm" id="2xo-fv-Jfo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

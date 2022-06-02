@@ -30,7 +30,6 @@ class CoreDataManager {
         }
     }
     
-    /*
     func saveUser(userName: String, userPassword: String){
         let context = container.viewContext
         let contact = UsuarioEntity(context: context)
@@ -93,13 +92,5 @@ class CoreDataManager {
         }
         
     }
-    
-    
-    
-    
-    
-    
-    
-    */
     
 }
