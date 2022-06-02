@@ -23,6 +23,9 @@
 		5D16DCC92846D6B500A53201 /* SearchUSDA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16DCC82846D6B500A53201 /* SearchUSDA.swift */; };
 		5D16DCCB2846DD6300A53201 /* SearchFoodNutrients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16DCCA2846DD6300A53201 /* SearchFoodNutrients.swift */; };
 		5D16DCCD2846E1F400A53201 /* SearchNutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16DCCC2846E1F400A53201 /* SearchNutrient.swift */; };
+		ED9CC8422848EDD00066B6DF /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9CC8412848EDD00066B6DF /* Helpers.swift */; };
+		ED9CC8442848F3010066B6DF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9CC8432848F3000066B6DF /* TableViewController.swift */; };
+		ED9CC8462848F3A60066B6DF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9CC8452848F3A60066B6DF /* TableViewCell.swift */; };
 		EDB281032848C07900BE7845 /* Fruits.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB281022848C07900BE7845 /* Fruits.swift */; };
 		EDB281062848C11A00BE7845 /* FruitsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB281042848C11A00BE7845 /* FruitsTableViewCell.swift */; };
 		EDB281072848C11A00BE7845 /* FruitsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDB281052848C11A00BE7845 /* FruitsTableViewCell.xib */; };
@@ -50,6 +53,9 @@
 		5D16DCC82846D6B500A53201 /* SearchUSDA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUSDA.swift; sourceTree = "<group>"; };
 		5D16DCCA2846DD6300A53201 /* SearchFoodNutrients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFoodNutrients.swift; sourceTree = "<group>"; };
 		5D16DCCC2846E1F400A53201 /* SearchNutrient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNutrient.swift; sourceTree = "<group>"; };
+		ED9CC8412848EDD00066B6DF /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		ED9CC8432848F3000066B6DF /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		ED9CC8452848F3A60066B6DF /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		EDB281022848C07900BE7845 /* Fruits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruits.swift; sourceTree = "<group>"; };
 		EDB281042848C11A00BE7845 /* FruitsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsTableViewCell.swift; sourceTree = "<group>"; };
 		EDB281052848C11A00BE7845 /* FruitsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FruitsTableViewCell.xib; sourceTree = "<group>"; };
@@ -128,8 +134,11 @@
 			children = (
 				5D16DCBD2846ABCD00A53201 /* StoryboardHomePage.storyboard */,
 				5D16DCBF2846ABEA00A53201 /* ViewControllerHomePage.swift */,
+				ED9CC8432848F3000066B6DF /* TableViewController.swift */,
+				ED9CC8452848F3A60066B6DF /* TableViewCell.swift */,
 				EDB281092848C87400BE7845 /* FoodIDSearch.swift */,
 				EDB2810B2848CA7A00BE7845 /* FruitNutrients.swift */,
+				ED9CC8412848EDD00066B6DF /* Helpers.swift */,
 				EDB2810D2848CDDB00BE7845 /* Nutrient.swift */,
 				EDB281022848C07900BE7845 /* Fruits.swift */,
 				EDB281082848C12500BE7845 /* TableViewCell */,
@@ -232,6 +241,8 @@
 			files = (
 				5D16DCC02846ABEA00A53201 /* ViewControllerHomePage.swift in Sources */,
 				5D16DCB52846A51700A53201 /* ViewControllerLogin.swift in Sources */,
+				ED9CC8442848F3010066B6DF /* TableViewController.swift in Sources */,
+				ED9CC8462848F3A60066B6DF /* TableViewCell.swift in Sources */,
 				5D16DC9B2846A3BF00A53201 /* AppDelegate.swift in Sources */,
 				5D16DCCB2846DD6300A53201 /* SearchFoodNutrients.swift in Sources */,
 				EDB281062848C11A00BE7845 /* FruitsTableViewCell.swift in Sources */,
@@ -241,6 +252,7 @@
 				EDB281032848C07900BE7845 /* Fruits.swift in Sources */,
 				5D16DCA52846A3BF00A53201 /* KnowVegan.xcdatamodeld in Sources */,
 				5D16DC9D2846A3BF00A53201 /* SceneDelegate.swift in Sources */,
+				ED9CC8422848EDD00066B6DF /* Helpers.swift in Sources */,
 				EDB2810E2848CDDB00BE7845 /* Nutrient.swift in Sources */,
 				EDB2810C2848CA7A00BE7845 /* FruitNutrients.swift in Sources */,
 				5D16DCC92846D6B500A53201 /* SearchUSDA.swift in Sources */,

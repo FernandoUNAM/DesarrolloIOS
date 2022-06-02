@@ -17,15 +17,20 @@ class ViewControllerHomePage: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setUpUI()
         loadFruits()
+        setUpTableView()
+        setUpUI()
     }
 
     
     // MARK: CONSTANTS AND VARIABLES
-    var fruits: [Fruits] = []
+    var fruits: [FoodIDSearch] = []
+    var appleFruit: FoodIDSearch = FoodIDSearch(fdcId: 0, description: "", publicationDate: "", foodNutrients: [])
+    var fruitName: String!
+
     
     // MARK: OUTLETS
+    @IBOutlet weak var nameofFruit: UILabel!
     @IBOutlet weak var fruitsTableView: UITableView!
     
     // MARK: ACTIONS
@@ -38,9 +43,7 @@ class ViewControllerHomePage: UIViewController {
             //ViewControllerSignUp.string1 = "envio de informacion"
             let navigationController = UINavigationController(rootViewController: ViewControllerDetailView)
             self.present(navigationController, animated: true)
-            
         }
-        
     }
     
     // MARK: FUNCTIONS
@@ -48,6 +51,20 @@ class ViewControllerHomePage: UIViewController {
     // INITIAL HOME PAGE CONFIGURATIONS
     func setUpUI(){
         self.title = "INICIO"
+    }
+    
+    func setUpGeneralInfo(){
+        fruits.append(appleFruit)
+        nameofFruit.text = fruitName
+    }
+    
+    func setUpTableView(){
+        
+        fruitsTableView.register(UINib(nibName: "FruitsTableViewCell", bundle: .main), forCellReuseIdentifier: "FruitTableViewCell")
+        
+        // DATASOURCE WOULD BE THE TABLEVIEW ITSELF
+        fruitsTableView.dataSource = self
+        
     }
     
     // LOAD FRUITS
@@ -95,22 +112,24 @@ class ViewControllerHomePage: UIViewController {
         let results = try decoder.decode(FoodIDSearch.self, from: data)
             
             print("DECODED RESPONSE: \(results)")
+            print("FRUITNAME: \(results.description)")
             
+            appleFruit = results
+            fruitName = results.description
+            
+            reloadTableView()
         } catch {
             print("DECODING PROCCESS ERROR: \(error)")
         }
     }
     
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    func reloadTableView(){
+        DispatchQueue.main.async {
+            self.setUpGeneralInfo()
+            self.fruitsTableView.reloadData()
+        }
     }
-    */
-
+    
 }
 
 // MARK: EXTENSIONS
@@ -135,4 +154,5 @@ extension ViewControllerHomePage: UITableViewDelegate, UITableViewDataSource {
         }
         return UITableViewCell()
     }
+    
 }
