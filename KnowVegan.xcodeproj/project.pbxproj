@@ -23,6 +23,7 @@
 		5D16DCC92846D6B500A53201 /* SearchUSDA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16DCC82846D6B500A53201 /* SearchUSDA.swift */; };
 		5D16DCCB2846DD6300A53201 /* SearchFoodNutrients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16DCCA2846DD6300A53201 /* SearchFoodNutrients.swift */; };
 		5D16DCCD2846E1F400A53201 /* SearchNutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16DCCC2846E1F400A53201 /* SearchNutrient.swift */; };
+		ED826DB928492FAD00EE33C3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED826DB828492FAD00EE33C3 /* CoreDataManager.swift */; };
 		ED9CC8422848EDD00066B6DF /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9CC8412848EDD00066B6DF /* Helpers.swift */; };
 		ED9CC8442848F3010066B6DF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9CC8432848F3000066B6DF /* TableViewController.swift */; };
 		ED9CC8462848F3A60066B6DF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9CC8452848F3A60066B6DF /* TableViewCell.swift */; };
@@ -53,6 +54,7 @@
 		5D16DCC82846D6B500A53201 /* SearchUSDA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUSDA.swift; sourceTree = "<group>"; };
 		5D16DCCA2846DD6300A53201 /* SearchFoodNutrients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFoodNutrients.swift; sourceTree = "<group>"; };
 		5D16DCCC2846E1F400A53201 /* SearchNutrient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNutrient.swift; sourceTree = "<group>"; };
+		ED826DB828492FAD00EE33C3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		ED9CC8412848EDD00066B6DF /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
 		ED9CC8432848F3000066B6DF /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
 		ED9CC8452848F3A60066B6DF /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
@@ -116,6 +118,7 @@
 			children = (
 				5D16DCB22846A4DF00A53201 /* StoryboardLogin.storyboard */,
 				5D16DCB42846A51700A53201 /* ViewControllerLogin.swift */,
+				ED826DB828492FAD00EE33C3 /* CoreDataManager.swift */,
 			);
 			path = 1Login;
 			sourceTree = "<group>";
@@ -250,6 +253,7 @@
 				5D16DCC02846ABEA00A53201 /* ViewControllerHomePage.swift in Sources */,
 				5D16DCB52846A51700A53201 /* ViewControllerLogin.swift in Sources */,
 				ED9CC8442848F3010066B6DF /* TableViewController.swift in Sources */,
+				ED826DB928492FAD00EE33C3 /* CoreDataManager.swift in Sources */,
 				ED9CC8462848F3A60066B6DF /* TableViewCell.swift in Sources */,
 				5D16DC9B2846A3BF00A53201 /* AppDelegate.swift in Sources */,
 				5D16DCCB2846DD6300A53201 /* SearchFoodNutrients.swift in Sources */,
