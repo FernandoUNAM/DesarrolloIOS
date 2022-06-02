@@ -92,21 +92,45 @@
                                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                             <inset key="scrollIndicatorInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                             <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="vbg-Qk-oPu">
-                                                <size key="itemSize" width="68" height="68"/>
+                                                <size key="itemSize" width="100" height="100"/>
                                                 <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                                 <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                                 <inset key="sectionInset" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
                                             </collectionViewFlowLayout>
                                             <cells>
-                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" reuseIdentifier="Cell" id="NvG-EN-gB4">
-                                                    <rect key="frame" x="0.0" y="26" width="68" height="68"/>
+                                                <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" reuseIdentifier="Cell" id="NvG-EN-gB4" customClass="CollectionViewCell" customModule="KnowVegan" customModuleProvider="target">
+                                                    <rect key="frame" x="0.0" y="10" width="100" height="100"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                     <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="QPY-Lv-hXc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="68" height="68"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
                                                         <autoresizingMask key="autoresizingMask"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KJD-RC-8RP">
+                                                                <rect key="frame" x="29" y="79" width="42" height="21"/>
+                                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="R9H-gf-m3r">
+                                                                <rect key="frame" x="5" y="5" width="90" height="69"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="R9H-gf-m3r" firstAttribute="top" secondItem="QPY-Lv-hXc" secondAttribute="top" constant="5" id="2nt-rA-Pfb"/>
+                                                            <constraint firstItem="R9H-gf-m3r" firstAttribute="leading" secondItem="QPY-Lv-hXc" secondAttribute="leading" constant="5" id="3dt-Kp-ESX"/>
+                                                            <constraint firstAttribute="trailing" secondItem="R9H-gf-m3r" secondAttribute="trailing" constant="5" id="4Yw-Mg-yzS"/>
+                                                            <constraint firstItem="KJD-RC-8RP" firstAttribute="top" secondItem="R9H-gf-m3r" secondAttribute="bottom" constant="5" id="7S0-Oi-PhY"/>
+                                                            <constraint firstItem="KJD-RC-8RP" firstAttribute="centerX" secondItem="QPY-Lv-hXc" secondAttribute="centerX" id="8D4-Xj-4Tr"/>
+                                                            <constraint firstItem="R9H-gf-m3r" firstAttribute="centerX" secondItem="QPY-Lv-hXc" secondAttribute="centerX" id="W2P-b9-fEo"/>
+                                                            <constraint firstAttribute="bottom" secondItem="KJD-RC-8RP" secondAttribute="bottom" id="uIu-OP-VNI"/>
+                                                        </constraints>
                                                     </collectionViewCellContentView>
-                                                    <color key="backgroundColor" systemColor="systemOrangeColor"/>
-                                                    <size key="customSize" width="68" height="68"/>
+                                                    <color key="backgroundColor" systemColor="systemGray4Color"/>
+                                                    <size key="customSize" width="100" height="100"/>
+                                                    <connections>
+                                                        <outlet property="fruitImageView" destination="R9H-gf-m3r" id="jhl-dl-mLH"/>
+                                                        <outlet property="fruitNameLabel" destination="KJD-RC-8RP" id="Tg6-jH-Wvd"/>
+                                                    </connections>
                                                 </collectionViewCell>
                                             </cells>
                                         </collectionView>
@@ -133,15 +157,15 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m8B-nq-M1z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="999" y="78"/>
+            <point key="canvasLocation" x="998.55072463768124" y="77.678571428571431"/>
         </scene>
     </scenes>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemOrangeColor">
-            <color red="1" green="0.58431372549019611" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <systemColor name="systemGray4Color">
+            <color red="0.81960784313725488" green="0.81960784313725488" blue="0.83921568627450982" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

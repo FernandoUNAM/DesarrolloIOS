@@ -8,6 +8,11 @@
 import UIKit
 
 class TableViewCell: UITableViewCell {
+    
+    override class func awakeFromNib() {
+        super.awakeFromNib()
+        print("Hello")
+    }
 
     @IBOutlet fileprivate weak var collectionView: UICollectionView!
     
