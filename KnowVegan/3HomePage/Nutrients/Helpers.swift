@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 func generateRandomData() -> [[UIColor]] {
-    let numberOfRows = 3
+    let numberOfRows = 1
     let numberOfItemsPerRow = 10
 
     return (0..<numberOfRows).map { _ in

@@ -13,6 +13,9 @@ class TableViewController: UITableViewController {
     let model = generateRandomData()
     var storedOffsets = [Int: CGFloat]()
 
+    var fruits: [FoodIDSearch] = []
+    var appleFruit: FoodIDSearch = FoodIDSearch(fdcId: 0, description: "", publicationDate: "", foodNutrients: [])
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return model.count
     }

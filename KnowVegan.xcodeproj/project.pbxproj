@@ -140,12 +140,12 @@
 			children = (
 				5D16DCBD2846ABCD00A53201 /* StoryboardHomePage.storyboard */,
 				5D16DCBF2846ABEA00A53201 /* ViewControllerHomePage.swift */,
+				EDB281082848C12500BE7845 /* TableViewCell */,
 				ED826DB7284905AA00EE33C3 /* Nutrients */,
 				EDB281092848C87400BE7845 /* FoodIDSearch.swift */,
 				EDB2810B2848CA7A00BE7845 /* FruitNutrients.swift */,
 				EDB2810D2848CDDB00BE7845 /* Nutrient.swift */,
 				EDB281022848C07900BE7845 /* Fruits.swift */,
-				EDB281082848C12500BE7845 /* TableViewCell */,
 			);
 			path = 3HomePage;
 			sourceTree = "<group>";

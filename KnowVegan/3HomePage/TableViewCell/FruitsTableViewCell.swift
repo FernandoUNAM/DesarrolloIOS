@@ -26,7 +26,6 @@ class FruitsTableViewCell: UITableViewCell {
     
     @IBOutlet weak var fruitImage: UIImageView!
     @IBOutlet weak var fruitName: UILabel!
-    
     @IBOutlet weak var elementsCollectionView: UICollectionView!
     
     // MARK: ACTIONS
