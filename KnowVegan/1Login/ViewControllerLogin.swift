@@ -43,7 +43,7 @@ class ViewControllerLogin: UIViewController {
     @IBAction func ButtonHomePage(_ sender: Any) {
         let StoryboardHomePage  = UIStoryboard(name: "StoryboardHomePage", bundle: .main)
         if let ViewControllerHomePage = StoryboardHomePage.instantiateViewController(withIdentifier: "HomePageVC") as? ViewControllerHomePage{
-            ViewControllerHomePage.intre = 5
+            //ViewControllerHomePage.intre = 5
             self.navigationController?.pushViewController(ViewControllerHomePage, animated: true)
 
             
@@ -54,13 +54,15 @@ class ViewControllerLogin: UIViewController {
     
     
     func searchFruts(){
-        guard let url  = URL(string: "https://api.nal.usda.gov/fdc/v1/food/1750340?api_key=JsGeeOLxpfxtZnGfQeNOBaWjJChkA0cxa3bQclSs") else {return}
+        guard let url  = URL(string: "https://api.nal.usda.gov/fdc/v1/food/1102644?api_key=JsGeeOLxpfxtZnGfQeNOBaWjJChkA0cxa3bQclSs") else {return}
         
         let task = URLSession.shared.dataTask(with: url) {data, response, error in
             if let data = data {
                 print ("DATA: \(data)")
-                //print ("STRING: \(String(decoding: data, as: UTF8.self))")
+                print ("JSON STRING: \(String(decoding: data, as: UTF8.self))")
+                
                 self.decodeJSONResponse(data: data)
+                
             }
             if let response = response {
                 print ("RESPONSE \(response)")
