@@ -26,11 +26,9 @@ class ViewControllerHomePage: UIViewController {
     // MARK: CONSTANTS AND VARIABLES
     var fruits: [FoodIDSearch] = []
     var appleFruit: FoodIDSearch = FoodIDSearch(fdcId: 0, description: "", publicationDate: "", foodNutrients: [])
-    var fruitName: String!
 
     
     // MARK: OUTLETS
-    @IBOutlet weak var nameofFruit: UILabel!
     @IBOutlet weak var fruitsTableView: UITableView!
     
     // MARK: ACTIONS
@@ -55,7 +53,6 @@ class ViewControllerHomePage: UIViewController {
     
     func setUpGeneralInfo(){
         fruits.append(appleFruit)
-        nameofFruit.text = fruitName
     }
     
     func setUpTableView(){
@@ -115,7 +112,6 @@ class ViewControllerHomePage: UIViewController {
             print("FRUITNAME: \(results.description)")
             
             appleFruit = results
-            fruitName = results.description
             
             reloadTableView()
         } catch {

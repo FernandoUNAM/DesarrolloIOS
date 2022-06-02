@@ -10,7 +10,7 @@ import UIKit
 class TableViewCell: UITableViewCell {
 
     @IBOutlet fileprivate weak var collectionView: UICollectionView!
-
+    
 }
 
 extension TableViewCell {

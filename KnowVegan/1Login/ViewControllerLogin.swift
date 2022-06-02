@@ -43,7 +43,7 @@ class ViewControllerLogin: UIViewController {
     @IBAction func ButtonHomePage(_ sender: Any) {
         let StoryboardHomePage  = UIStoryboard(name: "StoryboardHomePage", bundle: .main)
         if let ViewControllerHomePage = StoryboardHomePage.instantiateViewController(withIdentifier: "HomePageVC") as? ViewControllerHomePage{
-            //ViewControllerHomePage.intre = 5
+            
             self.navigationController?.pushViewController(ViewControllerHomePage, animated: true)
 
             

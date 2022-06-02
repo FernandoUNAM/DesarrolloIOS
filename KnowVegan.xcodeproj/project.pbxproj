@@ -94,10 +94,10 @@
 		5D16DC992846A3BF00A53201 /* KnowVegan */ = {
 			isa = PBXGroup;
 			children = (
+				5D16DCB12846A49500A53201 /* 1Login */,
 				5D16DCC12846AC1E00A53201 /* 2SignUp */,
 				5D16DCBC2846AB9300A53201 /* 3HomePage */,
 				5D16DCB72846AA2200A53201 /* 4DetailView */,
-				5D16DCB12846A49500A53201 /* 1Login */,
 				5D16DC9A2846A3BF00A53201 /* AppDelegate.swift */,
 				5D16DC9C2846A3BF00A53201 /* SceneDelegate.swift */,
 				5D16DCA62846A3C500A53201 /* Assets.xcassets */,
@@ -134,11 +134,9 @@
 			children = (
 				5D16DCBD2846ABCD00A53201 /* StoryboardHomePage.storyboard */,
 				5D16DCBF2846ABEA00A53201 /* ViewControllerHomePage.swift */,
-				ED9CC8432848F3000066B6DF /* TableViewController.swift */,
-				ED9CC8452848F3A60066B6DF /* TableViewCell.swift */,
+				ED826DB7284905AA00EE33C3 /* Nutrients */,
 				EDB281092848C87400BE7845 /* FoodIDSearch.swift */,
 				EDB2810B2848CA7A00BE7845 /* FruitNutrients.swift */,
-				ED9CC8412848EDD00066B6DF /* Helpers.swift */,
 				EDB2810D2848CDDB00BE7845 /* Nutrient.swift */,
 				EDB281022848C07900BE7845 /* Fruits.swift */,
 				EDB281082848C12500BE7845 /* TableViewCell */,
@@ -153,6 +151,16 @@
 				5D16DCC42846AD8800A53201 /* ViewControllerSignUp.swift */,
 			);
 			path = 2SignUp;
+			sourceTree = "<group>";
+		};
+		ED826DB7284905AA00EE33C3 /* Nutrients */ = {
+			isa = PBXGroup;
+			children = (
+				ED9CC8432848F3000066B6DF /* TableViewController.swift */,
+				ED9CC8452848F3A60066B6DF /* TableViewCell.swift */,
+				ED9CC8412848EDD00066B6DF /* Helpers.swift */,
+			);
+			path = Nutrients;
 			sourceTree = "<group>";
 		};
 		EDB281082848C12500BE7845 /* TableViewCell */ = {
