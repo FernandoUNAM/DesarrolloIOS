@@ -67,8 +67,12 @@ class ViewControllerHomePage: UIViewController {
     // LOAD FRUITS
     func loadFruits(){
         
+        // https://api.nal.usda.gov/fdc/v1/food/1102644?api_key=JsGeeOLxpfxtZnGfQeNOBaWjJChkA0cxa3bQclSs
+        
+        // https://api.nal.usda.gov/fdc/v1/foods/search?api_key=JsGeeOLxpfxtZnGfQeNOBaWjJChkA0cxa3bQclSs&query=pineapple&dataType=SR%20Legacy&pageSize=5&pageNumber=1&sortBy=dataType.keyword&sortOrder=asc
+        
         // URL ASSIGNATION
-        guard let url = URL(string: "https://api.nal.usda.gov/fdc/v1/food/1102644?api_key=JsGeeOLxpfxtZnGfQeNOBaWjJChkA0cxa3bQclSs") else {return}
+        guard let url = URL(string: "https://api.nal.usda.gov/fdc/v1/foods/search?api_key=JsGeeOLxpfxtZnGfQeNOBaWjJChkA0cxa3bQclSs&query=pineapple&dataType=SR%20Legacy&pageSize=5&pageNumber=1&sortBy=dataType.keyword&sortOrder=asc") else {return}
         
         let task = URLSession.shared.dataTask(with: url) {data, response, error in
             
@@ -112,6 +116,7 @@ class ViewControllerHomePage: UIViewController {
             print("FRUITNAME: \(results.description)")
             
             appleFruit = results
+
             
             reloadTableView()
         } catch {
