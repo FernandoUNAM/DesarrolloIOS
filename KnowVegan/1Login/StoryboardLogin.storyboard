@@ -131,6 +131,15 @@
                                 <color key="textColor" red="0.52549019610000003" green="0.52549019610000003" blue="0.5450980392" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HR5-ix-Wdv">
+                                <rect key="frame" x="50" y="434" width="314" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="gGJ-vE-0vu"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -141,6 +150,7 @@
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="KrJ-id-h3d" secondAttribute="trailing" constant="57" id="7iH-Zw-Fi1"/>
                             <constraint firstItem="X17-NS-nRx" firstAttribute="top" secondItem="x8e-wQ-nzm" secondAttribute="bottom" constant="20" id="8MB-Ac-msj"/>
                             <constraint firstItem="S8n-5O-Ov7" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="8qJ-yt-vbD"/>
+                            <constraint firstItem="HR5-ix-Wdv" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="50" id="CTX-kT-76t"/>
                             <constraint firstItem="rYJ-9q-VPY" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="Cpg-at-mgi"/>
                             <constraint firstItem="TNh-OR-BbI" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="DhZ-sW-mO0"/>
                             <constraint firstItem="FUg-Xd-Vgs" firstAttribute="top" secondItem="G1n-0p-9n9" secondAttribute="bottom" constant="25" id="GR9-fv-1Cx"/>
@@ -155,14 +165,18 @@
                             <constraint firstItem="x8e-wQ-nzm" firstAttribute="top" secondItem="S8n-5O-Ov7" secondAttribute="bottom" constant="20" id="eCQ-nJ-Il2"/>
                             <constraint firstItem="rYJ-9q-VPY" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="h3v-Gb-jWv"/>
                             <constraint firstItem="r0z-Dm-pWS" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="qW9-pp-cia"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="HR5-ix-Wdv" secondAttribute="trailing" constant="50" id="sKK-II-Hhs"/>
                             <constraint firstItem="lqC-Fi-z4L" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="57" id="sQE-Ni-qJJ"/>
                             <constraint firstItem="G1n-0p-9n9" firstAttribute="top" secondItem="KrJ-id-h3d" secondAttribute="bottom" constant="60" id="t3t-sH-omk"/>
+                            <constraint firstItem="G1n-0p-9n9" firstAttribute="top" secondItem="HR5-ix-Wdv" secondAttribute="bottom" constant="15" id="xhT-FY-XLW"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="ButtonHomePage1" destination="G1n-0p-9n9" id="EkE-MT-y9L"/>
                         <outlet property="PasswordField" destination="X17-NS-nRx" id="xuJ-uA-42e"/>
+                        <outlet property="SwitchUser" destination="KrJ-id-h3d" id="dIw-gK-tFW"/>
                         <outlet property="UserField" destination="x8e-wQ-nzm" id="2xo-fv-Jfo"/>
+                        <outlet property="WarningLabel2" destination="HR5-ix-Wdv" id="jWq-RF-DFb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
