@@ -11,9 +11,14 @@ class ViewControllerLogin: UIViewController {
     
     
     
-    
+    let dataManager = CoreDataManager()
     @IBOutlet weak var ButtonHomePage1: UIButton!
+    @IBOutlet weak var UserField: UITextField!
+    @IBOutlet weak var PasswordField: UITextField!
+    @IBOutlet weak var SwitchUser: UISwitch!
     
+    
+    @IBOutlet weak var WarningLabel2: UILabel!
     
 
     override func viewDidLoad() {
@@ -22,6 +27,10 @@ class ViewControllerLogin: UIViewController {
         searchFruts()
         startUpParameters ()
         print ("luchis es mi mejor enemigo")
+        PasswordField.isSecureTextEntry = true
+        //dataManager.deleteUser(name: "ratty")
+
+        
 
     }
     
@@ -40,14 +49,53 @@ class ViewControllerLogin: UIViewController {
     }
     
     @IBAction func ButtonHomePage(_ sender: Any) {
+        
+        
+        
+        guard let user = UserField.text, !user.isEmpty,
+              let password = PasswordField.text, !password.isEmpty
+        else {
+            WarningLabel2.text = "Datos Incompletos"
+            return}
+        
+        
+
+        
+        
+        
+        
+        let newContact = dataManager.readUser()
+        for cont in newContact {
+            
+            if cont.userName == user && cont.userPassword == password {
+                if SwitchUser.isOn {
+                    UserField.text = cont.userName
+                    PasswordField.text = cont.userPassword
+                }else {
+                    UserField.text = ""
+                    PasswordField.text = ""
+                }
+                WarningLabel2.text = ""
+                goToStoryboardHomePage()
+                break
+            } else{
+                WarningLabel2.text = "Contraseña o Usuario incorrecto"
+                
+            }
+
+            //print ("nombre: \(cont.userName)")
+            //print ("contraseña: \(cont.userPassword)")
+        }
+        
+        /*
         let StoryboardHomePage  = UIStoryboard(name: "StoryboardHomePage", bundle: .main)
         if let ViewControllerHomePage = StoryboardHomePage.instantiateViewController(withIdentifier: "HomePageVC") as? ViewControllerHomePage{
             ViewControllerHomePage.intre = 5
             self.navigationController?.pushViewController(ViewControllerHomePage, animated: true)
-
-            
         }
+        */
         
+
         
     }
     
@@ -146,6 +194,15 @@ class ViewControllerLogin: UIViewController {
     */
 
 
+    func goToStoryboardHomePage(){
+        let StoryboardHomePage  = UIStoryboard(name: "StoryboardHomePage", bundle: .main)
+        if let ViewControllerHomePage = StoryboardHomePage.instantiateViewController(withIdentifier: "HomePageVC") as? ViewControllerHomePage{
+            ViewControllerHomePage.intre = 5
+            self.navigationController?.pushViewController(ViewControllerHomePage, animated: true)
+        }
+        
+    }
+    
     
 
 }

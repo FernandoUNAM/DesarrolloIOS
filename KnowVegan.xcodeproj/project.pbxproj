@@ -23,6 +23,8 @@
 		5D16DCC92846D6B500A53201 /* SearchUSDA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16DCC82846D6B500A53201 /* SearchUSDA.swift */; };
 		5D16DCCB2846DD6300A53201 /* SearchFoodNutrients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16DCCA2846DD6300A53201 /* SearchFoodNutrients.swift */; };
 		5D16DCCD2846E1F400A53201 /* SearchNutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16DCCC2846E1F400A53201 /* SearchNutrient.swift */; };
+		5D16DCCF2848487600A53201 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16DCCE2848487500A53201 /* CoreDataManager.swift */; };
+		5D16DCD128484CAC00A53201 /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16DCD028484CAC00A53201 /* NewUser.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +46,8 @@
 		5D16DCC82846D6B500A53201 /* SearchUSDA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUSDA.swift; sourceTree = "<group>"; };
 		5D16DCCA2846DD6300A53201 /* SearchFoodNutrients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFoodNutrients.swift; sourceTree = "<group>"; };
 		5D16DCCC2846E1F400A53201 /* SearchNutrient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNutrient.swift; sourceTree = "<group>"; };
+		5D16DCCE2848487500A53201 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
+		5D16DCD028484CAC00A53201 /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +93,8 @@
 				5D16DCC82846D6B500A53201 /* SearchUSDA.swift */,
 				5D16DCCA2846DD6300A53201 /* SearchFoodNutrients.swift */,
 				5D16DCCC2846E1F400A53201 /* SearchNutrient.swift */,
+				5D16DCCE2848487500A53201 /* CoreDataManager.swift */,
+				5D16DCD028484CAC00A53201 /* NewUser.swift */,
 			);
 			path = KnowVegan;
 			sourceTree = "<group>";
@@ -204,6 +210,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D16DCC02846ABEA00A53201 /* ViewControllerHomePage.swift in Sources */,
+				5D16DCD128484CAC00A53201 /* NewUser.swift in Sources */,
 				5D16DCB52846A51700A53201 /* ViewControllerLogin.swift in Sources */,
 				5D16DC9B2846A3BF00A53201 /* AppDelegate.swift in Sources */,
 				5D16DCCB2846DD6300A53201 /* SearchFoodNutrients.swift in Sources */,
@@ -213,6 +220,7 @@
 				5D16DC9D2846A3BF00A53201 /* SceneDelegate.swift in Sources */,
 				5D16DCC92846D6B500A53201 /* SearchUSDA.swift in Sources */,
 				5D16DCC52846AD8800A53201 /* ViewControllerSignUp.swift in Sources */,
+				5D16DCCF2848487600A53201 /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

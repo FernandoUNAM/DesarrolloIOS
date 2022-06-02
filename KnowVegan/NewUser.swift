@@ -6,3 +6,18 @@
 //
 
 import Foundation
+
+struct Contact {
+    
+    let nameUser: String
+    let passwordUser: String
+ 
+
+    
+    
+    init (nameUser: String, passwordUser: String){
+        self.nameUser = nameUser
+        self.passwordUser = passwordUser
+        
+    }
+}

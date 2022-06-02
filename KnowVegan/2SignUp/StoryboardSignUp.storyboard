@@ -4,7 +4,6 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -35,33 +34,48 @@
                                     <action selector="ButtonHomePage:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="heE-PV-spy"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6bd-Iq-Gtk">
-                                <rect key="frame" x="34" y="160" width="97" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6bd-Iq-Gtk">
+                                <rect key="frame" x="33" y="150" width="305" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="305" id="168-hR-leG"/>
+                                    <constraint firstAttribute="height" constant="48" id="hCu-HW-jFr"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre de usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jx1-5x-zzg">
-                                <rect key="frame" x="34" y="232" width="180" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Nombre de usuario" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jx1-5x-zzg">
+                                <rect key="frame" x="33" y="208" width="305" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="305" id="IdH-g9-TjR"/>
+                                    <constraint firstAttribute="height" constant="48" id="suj-cM-rCY"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo electronico" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7q5-lL-l3b">
-                                <rect key="frame" x="34" y="303" width="205" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Correo electronico" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7q5-lL-l3b">
+                                <rect key="frame" x="33" y="266" width="305" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="305" id="Mu3-9e-pSh"/>
+                                    <constraint firstAttribute="height" constant="48" id="o1I-Ta-QpS"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zbm-kb-Y06">
-                                <rect key="frame" x="34" y="365" width="169" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zbm-kb-Y06">
+                                <rect key="frame" x="33" y="324" width="305" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="305" id="3Ou-ai-oJU"/>
+                                    <constraint firstAttribute="height" constant="48" id="zcd-GQ-Dc8"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmar contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EDn-dA-nQK">
-                                <rect key="frame" x="34" y="449" width="180" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Confirmar contraseña" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EDn-dA-nQK">
+                                <rect key="frame" x="33" y="382" width="305" height="48"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="305" id="R1p-eK-8Du"/>
+                                    <constraint firstAttribute="height" constant="48" id="VfR-QM-PVZ"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
@@ -74,10 +88,20 @@
                             </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="7q5-lL-l3b" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="33" id="39l-J4-Yh7"/>
+                            <constraint firstItem="6bd-Iq-Gtk" firstAttribute="top" secondItem="HgE-xC-zKt" secondAttribute="bottom" constant="52" id="6RY-42-tJe"/>
                             <constraint firstItem="HgE-xC-zKt" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="20" id="BJ5-om-mSU"/>
+                            <constraint firstItem="zbm-kb-Y06" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="33" id="DKi-OK-Ybu"/>
+                            <constraint firstItem="zbm-kb-Y06" firstAttribute="top" secondItem="7q5-lL-l3b" secondAttribute="bottom" constant="10" id="Kd9-fL-hGe"/>
+                            <constraint firstItem="EDn-dA-nQK" firstAttribute="top" secondItem="zbm-kb-Y06" secondAttribute="bottom" constant="10" id="Muc-le-WKL"/>
                             <constraint firstItem="HgE-xC-zKt" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="34" id="Xsm-u4-3P5"/>
+                            <constraint firstItem="6bd-Iq-Gtk" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="33" id="cNr-5k-eIU"/>
+                            <constraint firstItem="jx1-5x-zzg" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="33" id="d4N-3E-kZr"/>
+                            <constraint firstItem="jx1-5x-zzg" firstAttribute="top" secondItem="6bd-Iq-Gtk" secondAttribute="bottom" constant="10" id="fya-kR-wKK"/>
+                            <constraint firstItem="EDn-dA-nQK" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="33" id="igh-lY-LmB"/>
+                            <constraint firstItem="7q5-lL-l3b" firstAttribute="top" secondItem="jx1-5x-zzg" secondAttribute="bottom" constant="10" id="sUz-hu-nU5"/>
                         </constraints>
                     </view>
                     <connections>
@@ -95,9 +119,4 @@
             <point key="canvasLocation" x="108.69565217391305" y="78.348214285714278"/>
         </scene>
     </scenes>
-    <resources>
-        <systemColor name="systemBackgroundColor">
-            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
-    </resources>
 </document>
