@@ -45,7 +45,7 @@ class ViewControllerSignUp: UIViewController {
         
         let StoryboardHomePage  = UIStoryboard(name: "StoryboardHomePage", bundle: .main)
         if let ViewControllerHomePage = StoryboardHomePage.instantiateViewController(withIdentifier: "HomePageVC") as? ViewControllerHomePage{
-            ViewControllerHomePage.intre = 5
+            //ViewControllerHomePage.intre = 5
             self.navigationController?.pushViewController(ViewControllerHomePage, animated: true)
         }
         
