@@ -9,9 +9,14 @@ import UIKit
 
 class ViewControllerDetailView: UIViewController {
 
+    
+    
+    var IDFrut: String = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "FRUTAS"
+        print (IDFrut)
 
         // Do any additional setup after loading the view.
     }

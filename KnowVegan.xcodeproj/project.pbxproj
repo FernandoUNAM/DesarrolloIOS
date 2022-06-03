@@ -23,6 +23,12 @@
 		5D16DCC92846D6B500A53201 /* SearchUSDA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16DCC82846D6B500A53201 /* SearchUSDA.swift */; };
 		5D16DCCB2846DD6300A53201 /* SearchFoodNutrients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16DCCA2846DD6300A53201 /* SearchFoodNutrients.swift */; };
 		5D16DCCD2846E1F400A53201 /* SearchNutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16DCCC2846E1F400A53201 /* SearchNutrient.swift */; };
+		5D16DCD52849412600A53201 /* FoodSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16DCD42849412600A53201 /* FoodSearch.swift */; };
+		5D16DCD7284941C200A53201 /* SearchFoods.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16DCD6284941C200A53201 /* SearchFoods.swift */; };
+		5D16DCDA284942F200A53201 /* StoryboardFoodSearch.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5D16DCD9284942F200A53201 /* StoryboardFoodSearch.storyboard */; };
+		5D16DCDC2849432100A53201 /* ViewControllerFoodSearch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16DCDB2849432100A53201 /* ViewControllerFoodSearch.swift */; };
+		5D16DCE4284960EF00A53201 /* FoodSearchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16DCE2284960EF00A53201 /* FoodSearchTableViewCell.swift */; };
+		5D16DCE5284960EF00A53201 /* FoodSearchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 5D16DCE3284960EF00A53201 /* FoodSearchTableViewCell.xib */; };
 		ED826DB928492FAD00EE33C3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED826DB828492FAD00EE33C3 /* CoreDataManager.swift */; };
 		ED826DBB2849318900EE33C3 /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED826DBA2849318900EE33C3 /* NewUser.swift */; };
 		ED9CC8422848EDD00066B6DF /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9CC8412848EDD00066B6DF /* Helpers.swift */; };
@@ -55,6 +61,12 @@
 		5D16DCC82846D6B500A53201 /* SearchUSDA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUSDA.swift; sourceTree = "<group>"; };
 		5D16DCCA2846DD6300A53201 /* SearchFoodNutrients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFoodNutrients.swift; sourceTree = "<group>"; };
 		5D16DCCC2846E1F400A53201 /* SearchNutrient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNutrient.swift; sourceTree = "<group>"; };
+		5D16DCD42849412600A53201 /* FoodSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearch.swift; sourceTree = "<group>"; };
+		5D16DCD6284941C200A53201 /* SearchFoods.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFoods.swift; sourceTree = "<group>"; };
+		5D16DCD9284942F200A53201 /* StoryboardFoodSearch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StoryboardFoodSearch.storyboard; sourceTree = "<group>"; };
+		5D16DCDB2849432100A53201 /* ViewControllerFoodSearch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerFoodSearch.swift; sourceTree = "<group>"; };
+		5D16DCE2284960EF00A53201 /* FoodSearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodSearchTableViewCell.swift; sourceTree = "<group>"; };
+		5D16DCE3284960EF00A53201 /* FoodSearchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FoodSearchTableViewCell.xib; sourceTree = "<group>"; };
 		ED826DB828492FAD00EE33C3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		ED826DBA2849318900EE33C3 /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
 		ED9CC8412848EDD00066B6DF /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
@@ -98,6 +110,7 @@
 		5D16DC992846A3BF00A53201 /* KnowVegan */ = {
 			isa = PBXGroup;
 			children = (
+				5D16DCD8284942A300A53201 /* 5FoodSearch */,
 				5D16DCB12846A49500A53201 /* 1Login */,
 				5D16DCC12846AC1E00A53201 /* 2SignUp */,
 				5D16DCBC2846AB9300A53201 /* 3HomePage */,
@@ -110,6 +123,8 @@
 				5D16DCC82846D6B500A53201 /* SearchUSDA.swift */,
 				5D16DCCA2846DD6300A53201 /* SearchFoodNutrients.swift */,
 				5D16DCCC2846E1F400A53201 /* SearchNutrient.swift */,
+				5D16DCD42849412600A53201 /* FoodSearch.swift */,
+				5D16DCD6284941C200A53201 /* SearchFoods.swift */,
 			);
 			path = KnowVegan;
 			sourceTree = "<group>";
@@ -157,6 +172,25 @@
 				5D16DCC42846AD8800A53201 /* ViewControllerSignUp.swift */,
 			);
 			path = 2SignUp;
+			sourceTree = "<group>";
+		};
+		5D16DCD8284942A300A53201 /* 5FoodSearch */ = {
+			isa = PBXGroup;
+			children = (
+				5D16DCDD2849602000A53201 /* TableViewCell */,
+				5D16DCD9284942F200A53201 /* StoryboardFoodSearch.storyboard */,
+				5D16DCDB2849432100A53201 /* ViewControllerFoodSearch.swift */,
+			);
+			path = 5FoodSearch;
+			sourceTree = "<group>";
+		};
+		5D16DCDD2849602000A53201 /* TableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				5D16DCE2284960EF00A53201 /* FoodSearchTableViewCell.swift */,
+				5D16DCE3284960EF00A53201 /* FoodSearchTableViewCell.xib */,
+			);
+			path = TableViewCell;
 			sourceTree = "<group>";
 		};
 		ED826DB7284905AA00EE33C3 /* Nutrients */ = {
@@ -241,6 +275,8 @@
 				5D16DCBE2846ABCD00A53201 /* StoryboardHomePage.storyboard in Resources */,
 				EDB281072848C11A00BE7845 /* FruitsTableViewCell.xib in Resources */,
 				5D16DCB92846AA5900A53201 /* StoryboardDetailView.storyboard in Resources */,
+				5D16DCDA284942F200A53201 /* StoryboardFoodSearch.storyboard in Resources */,
+				5D16DCE5284960EF00A53201 /* FoodSearchTableViewCell.xib in Resources */,
 				5D16DCB32846A4DF00A53201 /* StoryboardLogin.storyboard in Resources */,
 				5D16DCA72846A3C500A53201 /* Assets.xcassets in Resources */,
 			);
@@ -263,10 +299,14 @@
 				5D16DCCB2846DD6300A53201 /* SearchFoodNutrients.swift in Sources */,
 				EDB281062848C11A00BE7845 /* FruitsTableViewCell.swift in Sources */,
 				5D16DCCD2846E1F400A53201 /* SearchNutrient.swift in Sources */,
+				5D16DCD52849412600A53201 /* FoodSearch.swift in Sources */,
 				5D16DCBB2846AA8A00A53201 /* ViewControllerDetailView.swift in Sources */,
 				EDB2810A2848C87400BE7845 /* FoodIDSearch.swift in Sources */,
 				EDB281032848C07900BE7845 /* Fruits.swift in Sources */,
 				5D16DCA52846A3BF00A53201 /* KnowVegan.xcdatamodeld in Sources */,
+				5D16DCD7284941C200A53201 /* SearchFoods.swift in Sources */,
+				5D16DCDC2849432100A53201 /* ViewControllerFoodSearch.swift in Sources */,
+				5D16DCE4284960EF00A53201 /* FoodSearchTableViewCell.swift in Sources */,
 				5D16DC9D2846A3BF00A53201 /* SceneDelegate.swift in Sources */,
 				ED9CC8422848EDD00066B6DF /* Helpers.swift in Sources */,
 				EDB2810E2848CDDB00BE7845 /* Nutrient.swift in Sources */,
