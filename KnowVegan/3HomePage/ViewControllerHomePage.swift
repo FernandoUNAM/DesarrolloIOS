@@ -17,19 +17,20 @@ class ViewControllerHomePage: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        loadFruits()
-        setUpGeneralInfo()
+        initialSetUp()
         setUpTableView()
-        setUpUI()
+        setUpGeneralInfo()
         
     }
     
     // MARK: CONSTANTS AND VARIABLES
     
     var fruits: [Fruits] = []
-    var appleFruit: FoodIDSearch = FoodIDSearch(fdcId: 0, description: "", publicationDate: "", foodNutrients: [])
-
+    
+    var fruitsArray: [FoodIDSearch] = []
+    
+    var fruitItem: FoodIDSearch = FoodIDSearch(fdcId: 0, description: "", publicationDate: "", foodNutrients: [])
+    
     
     // MARK: OUTLETS
     @IBOutlet weak var fruitsTableView: UITableView!
@@ -40,8 +41,7 @@ class ViewControllerHomePage: UIViewController {
     @IBAction func ButtonDetailView(_ sender: Any) {
         let StoryboardDetailView  = UIStoryboard(name: "StoryboardDetailView", bundle: .main)
         if let ViewControllerDetailView = StoryboardDetailView.instantiateViewController(withIdentifier: "DetailViewVC") as? ViewControllerDetailView{
-            //ViewControllerSignUp.modalPresentationStyle = .fullScreen
-            //ViewControllerSignUp.string1 = "envio de informacion"
+            
             let navigationController = UINavigationController(rootViewController: ViewControllerDetailView)
             self.present(navigationController, animated: true)
         }
@@ -50,17 +50,31 @@ class ViewControllerHomePage: UIViewController {
     // MARK: FUNCTIONS
     
     // INITIAL HOME PAGE CONFIGURATIONS
-    func setUpUI(){
+    func initialSetUp(){
         self.title = "INICIO"
+        
+        let fruitsIDs: [Int] = [168171,1102688,169910,167762,167765]
+        
+        var counter: Int = 1
+        
+        for fruitsID in fruitsIDs {
+            fruitsArray.append(loadFruits(foodId: fruitsID))
+            counter = counter + 1
+        }
+        
     }
     
     // APPEND OF WEB SERVICE ELEMENTS
     func setUpGeneralInfo(){
-        fruits.append(Fruits(name: "Apple", image: "apple"))
+        
+        print("\(fruitsArray[1].description)")
+        
+        fruits.append(Fruits(name: fruitsArray[1].description, image: "apple"))
         fruits.append(Fruits(name: "PineApple", image: "pineapple"))
         fruits.append(Fruits(name: "Mango", image: "mango"))
         fruits.append(Fruits(name: "StrawBerry", image: "strawberry"))
         fruits.append(Fruits(name: "WaterMelon", image: "watermelon"))
+        
     }
     
     // MAIN TABLEVIEW CONFIGURATION
@@ -75,14 +89,14 @@ class ViewControllerHomePage: UIViewController {
     }
     
     // LOAD FRUITS
-    func loadFruits(){
+    func loadFruits(foodId: Int) -> FoodIDSearch{
         
-        // https://api.nal.usda.gov/fdc/v1/food/1102644?api_key=JsGeeOLxpfxtZnGfQeNOBaWjJChkA0cxa3bQclSs
-        
-        // https://api.nal.usda.gov/fdc/v1/foods/search?api_key=JsGeeOLxpfxtZnGfQeNOBaWjJChkA0cxa3bQclSs&query=pineapple&dataType=SR%20Legacy&pageSize=5&pageNumber=1&sortBy=dataType.keyword&sortOrder=asc
+        var item = FoodIDSearch(fdcId: 0, description: "", publicationDate: "", foodNutrients: [])
         
         // URL ASSIGNATION
-        guard let url = URL(string: "https://api.nal.usda.gov/fdc/v1/food/1102644?api_key=JsGeeOLxpfxtZnGfQeNOBaWjJChkA0cxa3bQclSs") else {return}
+        guard let url = URL(string: "https://api.nal.usda.gov/fdc/v1/food/\(foodId)?api_key=JsGeeOLxpfxtZnGfQeNOBaWjJChkA0cxa3bQclSs") else {
+            return item
+        }
         
         let task = URLSession.shared.dataTask(with: url) {data, response, error in
             
@@ -91,7 +105,8 @@ class ViewControllerHomePage: UIViewController {
                 print("DATA PACKAGE SIZE: \(data)")
                 print("DATA JSON STRING: \(String(decoding: data, as: UTF8.self))")
                 
-                self.decodeJSONResponse(data: data)
+                item = self.decodeJSONResponse(data: data)
+            
             }
             
             // UNWRAPS HTTPS RESPONSE CODE
@@ -106,16 +121,21 @@ class ViewControllerHomePage: UIViewController {
             // UWRAPS WEB SERVICE REQUEST ERROR CODE
             if let error = error {
                 print("WEB SERVICE REQUEST ERROR: \(error)")
+                
             }
+            
+            
             
         }
         
         // TASK RESUMES IN BACKGROUND
         task.resume()
-        
+        return item
     }
     
-    func decodeJSONResponse(data: Data){
+    func decodeJSONResponse(data: Data) -> FoodIDSearch{
+        
+        var decodedItem = FoodIDSearch(fdcId: 0, description: "", publicationDate: "", foodNutrients: [])
         
         do {
             
@@ -125,19 +145,20 @@ class ViewControllerHomePage: UIViewController {
             print("DECODED RESPONSE: \(results)")
             print("FRUITNAME: \(results.description)")
             
-            appleFruit = results
-
+            decodedItem = results
             
             reloadTableView()
+            
         } catch {
             print("DECODING PROCCESS ERROR: \(error)")
         }
+        return decodedItem
     }
     
     func reloadTableView(){
         DispatchQueue.main.async {
-            self.setUpGeneralInfo()
             self.fruitsTableView.reloadData()
+            self.setUpGeneralInfo()
         }
     }
     
@@ -152,22 +173,23 @@ extension ViewControllerHomePage: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         // NUMBER OF ROWS IN SECTION
-        return 1
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: FruitsTableViewCell.identifier, for: indexPath) as? FruitsTableViewCell {
             
             // GO TROUGH ARRAY'S ITEMS AND ASSIGNS THEM TO A CELL RESPECTIVE ROW
-            cell.setUpWith(with: fruits)
+            cell.setUpWith(with: fruitsArray[indexPath.row])
             
             return cell
         }
         return UITableViewCell()
     }
-    
+    /*
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 250.0
     }
+     */
     
 }

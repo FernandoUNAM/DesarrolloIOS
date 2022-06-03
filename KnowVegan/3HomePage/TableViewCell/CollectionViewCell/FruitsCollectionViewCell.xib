@@ -11,23 +11,23 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FruitsCollectionViewCell" id="gTV-IL-0wX" customClass="FruitsCollectionViewCell" customModule="KnowVegan" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+            <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="180" height="180"/>
+                <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCL-do-1uz">
-                        <rect key="frame" x="69" y="154" width="42" height="21"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <rect key="frame" x="47.5" y="110" width="35.5" height="17"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="44y-gN-gHy">
-                        <rect key="frame" x="20" y="9" width="140" height="140"/>
+                        <rect key="frame" x="10" y="0.0" width="110" height="110"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="140" id="Jz4-mF-zg0"/>
-                            <constraint firstAttribute="height" constant="140" id="qHV-hv-DsN"/>
+                            <constraint firstAttribute="width" constant="110" id="Jz4-mF-zg0"/>
+                            <constraint firstAttribute="height" constant="110" id="qHV-hv-DsN"/>
                         </constraints>
                     </imageView>
                 </subviews>
@@ -35,12 +35,10 @@
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="44y-gN-gHy" secondAttribute="trailing" constant="20" id="95Q-Zm-1gr"/>
-                <constraint firstAttribute="bottom" secondItem="LCL-do-1uz" secondAttribute="bottom" constant="5" id="Nq4-Td-ggR"/>
-                <constraint firstItem="44y-gN-gHy" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="20" id="d7c-H6-DwB"/>
-                <constraint firstItem="44y-gN-gHy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="9" id="fUh-eC-L90"/>
+                <constraint firstItem="44y-gN-gHy" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="0P3-zR-a2s"/>
+                <constraint firstItem="44y-gN-gHy" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="1E6-9X-sao"/>
                 <constraint firstItem="LCL-do-1uz" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="mWg-JD-wXP"/>
-                <constraint firstItem="LCL-do-1uz" firstAttribute="top" secondItem="44y-gN-gHy" secondAttribute="bottom" constant="5" id="tao-kk-0F2"/>
+                <constraint firstItem="LCL-do-1uz" firstAttribute="top" secondItem="44y-gN-gHy" secondAttribute="bottom" id="zkM-mO-OXa"/>
             </constraints>
             <size key="customSize" width="180" height="171"/>
             <connections>

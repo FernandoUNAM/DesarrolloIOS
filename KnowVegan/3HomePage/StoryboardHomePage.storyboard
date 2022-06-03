@@ -24,11 +24,11 @@
                                     <action selector="ButtonDetailView:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="pSm-sl-kRd"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kD4-bK-mGm">
-                                <rect key="frame" x="20" y="144" width="374" height="500"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" pagingEnabled="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="kD4-bK-mGm">
+                                <rect key="frame" x="20" y="144" width="374" height="600"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="500" id="ryN-Hd-vZy"/>
+                                    <constraint firstAttribute="height" constant="600" id="ryN-Hd-vZy"/>
                                 </constraints>
                             </tableView>
                         </subviews>
