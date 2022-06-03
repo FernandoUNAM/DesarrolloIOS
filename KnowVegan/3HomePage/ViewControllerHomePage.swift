@@ -13,6 +13,12 @@ import UIKit
 
 class ViewControllerHomePage: UIViewController {
     
+    
+    
+    @IBOutlet weak var FoodsField: UITextField!
+    
+    
+    
     // MARK: APP LIFE CYCLE
     
     override func viewDidLoad() {
@@ -34,6 +40,13 @@ class ViewControllerHomePage: UIViewController {
     
     // MARK: OUTLETS
     @IBOutlet weak var fruitsTableView: UITableView!
+    
+    
+    
+    @IBOutlet weak var FoodSearchField: UITextField!
+    
+    
+    
     
     // MARK: ACTIONS
     
@@ -161,6 +174,35 @@ class ViewControllerHomePage: UIViewController {
             self.setUpGeneralInfo()
         }
     }
+    
+
+    @IBAction func ButtonFoodSearch(_ sender: Any) {
+        guard let food = FoodsField.text, !food.isEmpty
+        else {return}
+        
+        
+        goToStoryboardFoodSearch()
+    }
+    
+    
+    func goToStoryboardFoodSearch(){
+        let StoryboardFoodSearch  = UIStoryboard(name: "StoryboardFoodSearch", bundle: .main)
+        if let ViewControllerFoodSearch = StoryboardFoodSearch.instantiateViewController(withIdentifier: "FoodSearchVC") as? ViewControllerFoodSearch{
+            if let frutName = FoodsField.text {
+                
+                ViewControllerFoodSearch.nameFood = "\(frutName)"
+                
+            }else {
+                
+                print ("TEXT FIELD ERROR")
+                
+            }
+            
+            self.navigationController?.pushViewController(ViewControllerFoodSearch, animated: true)
+        }
+        
+    }
+    
     
 }
 
