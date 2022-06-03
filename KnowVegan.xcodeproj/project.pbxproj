@@ -23,11 +23,10 @@
 		5D16DCC92846D6B500A53201 /* SearchUSDA.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16DCC82846D6B500A53201 /* SearchUSDA.swift */; };
 		5D16DCCB2846DD6300A53201 /* SearchFoodNutrients.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16DCCA2846DD6300A53201 /* SearchFoodNutrients.swift */; };
 		5D16DCCD2846E1F400A53201 /* SearchNutrient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D16DCCC2846E1F400A53201 /* SearchNutrient.swift */; };
+		ED42B93D28498EF400B80CFF /* FruitsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED42B93B28498EF400B80CFF /* FruitsCollectionViewCell.swift */; };
+		ED42B93E28498EF400B80CFF /* FruitsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = ED42B93C28498EF400B80CFF /* FruitsCollectionViewCell.xib */; };
 		ED826DB928492FAD00EE33C3 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED826DB828492FAD00EE33C3 /* CoreDataManager.swift */; };
 		ED826DBB2849318900EE33C3 /* NewUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED826DBA2849318900EE33C3 /* NewUser.swift */; };
-		ED9CC8422848EDD00066B6DF /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9CC8412848EDD00066B6DF /* Helpers.swift */; };
-		ED9CC8442848F3010066B6DF /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9CC8432848F3000066B6DF /* TableViewController.swift */; };
-		ED9CC8462848F3A60066B6DF /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED9CC8452848F3A60066B6DF /* TableViewCell.swift */; };
 		EDB281032848C07900BE7845 /* Fruits.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB281022848C07900BE7845 /* Fruits.swift */; };
 		EDB281062848C11A00BE7845 /* FruitsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB281042848C11A00BE7845 /* FruitsTableViewCell.swift */; };
 		EDB281072848C11A00BE7845 /* FruitsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = EDB281052848C11A00BE7845 /* FruitsTableViewCell.xib */; };
@@ -55,11 +54,10 @@
 		5D16DCC82846D6B500A53201 /* SearchUSDA.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUSDA.swift; sourceTree = "<group>"; };
 		5D16DCCA2846DD6300A53201 /* SearchFoodNutrients.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchFoodNutrients.swift; sourceTree = "<group>"; };
 		5D16DCCC2846E1F400A53201 /* SearchNutrient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchNutrient.swift; sourceTree = "<group>"; };
+		ED42B93B28498EF400B80CFF /* FruitsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsCollectionViewCell.swift; sourceTree = "<group>"; };
+		ED42B93C28498EF400B80CFF /* FruitsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FruitsCollectionViewCell.xib; sourceTree = "<group>"; };
 		ED826DB828492FAD00EE33C3 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 		ED826DBA2849318900EE33C3 /* NewUser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewUser.swift; sourceTree = "<group>"; };
-		ED9CC8412848EDD00066B6DF /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
-		ED9CC8432848F3000066B6DF /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
-		ED9CC8452848F3A60066B6DF /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		EDB281022848C07900BE7845 /* Fruits.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fruits.swift; sourceTree = "<group>"; };
 		EDB281042848C11A00BE7845 /* FruitsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FruitsTableViewCell.swift; sourceTree = "<group>"; };
 		EDB281052848C11A00BE7845 /* FruitsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FruitsTableViewCell.xib; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 				5D16DCBD2846ABCD00A53201 /* StoryboardHomePage.storyboard */,
 				5D16DCBF2846ABEA00A53201 /* ViewControllerHomePage.swift */,
 				EDB281082848C12500BE7845 /* TableViewCell */,
-				ED826DB7284905AA00EE33C3 /* Nutrients */,
 				EDB281092848C87400BE7845 /* FoodIDSearch.swift */,
 				EDB2810B2848CA7A00BE7845 /* FruitNutrients.swift */,
 				EDB2810D2848CDDB00BE7845 /* Nutrient.swift */,
@@ -159,14 +156,13 @@
 			path = 2SignUp;
 			sourceTree = "<group>";
 		};
-		ED826DB7284905AA00EE33C3 /* Nutrients */ = {
+		ED42B93F28498EF700B80CFF /* CollectionViewCell */ = {
 			isa = PBXGroup;
 			children = (
-				ED9CC8432848F3000066B6DF /* TableViewController.swift */,
-				ED9CC8452848F3A60066B6DF /* TableViewCell.swift */,
-				ED9CC8412848EDD00066B6DF /* Helpers.swift */,
+				ED42B93B28498EF400B80CFF /* FruitsCollectionViewCell.swift */,
+				ED42B93C28498EF400B80CFF /* FruitsCollectionViewCell.xib */,
 			);
-			path = Nutrients;
+			path = CollectionViewCell;
 			sourceTree = "<group>";
 		};
 		EDB281082848C12500BE7845 /* TableViewCell */ = {
@@ -174,6 +170,7 @@
 			children = (
 				EDB281042848C11A00BE7845 /* FruitsTableViewCell.swift */,
 				EDB281052848C11A00BE7845 /* FruitsTableViewCell.xib */,
+				ED42B93F28498EF700B80CFF /* CollectionViewCell */,
 			);
 			path = TableViewCell;
 			sourceTree = "<group>";
@@ -237,6 +234,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D16DCAA2846A3C500A53201 /* LaunchScreen.storyboard in Resources */,
+				ED42B93E28498EF400B80CFF /* FruitsCollectionViewCell.xib in Resources */,
 				5D16DCC32846AD6700A53201 /* StoryboardSignUp.storyboard in Resources */,
 				5D16DCBE2846ABCD00A53201 /* StoryboardHomePage.storyboard in Resources */,
 				EDB281072848C11A00BE7845 /* FruitsTableViewCell.xib in Resources */,
@@ -255,20 +253,18 @@
 			files = (
 				5D16DCC02846ABEA00A53201 /* ViewControllerHomePage.swift in Sources */,
 				5D16DCB52846A51700A53201 /* ViewControllerLogin.swift in Sources */,
-				ED9CC8442848F3010066B6DF /* TableViewController.swift in Sources */,
 				ED826DB928492FAD00EE33C3 /* CoreDataManager.swift in Sources */,
-				ED9CC8462848F3A60066B6DF /* TableViewCell.swift in Sources */,
 				ED826DBB2849318900EE33C3 /* NewUser.swift in Sources */,
 				5D16DC9B2846A3BF00A53201 /* AppDelegate.swift in Sources */,
 				5D16DCCB2846DD6300A53201 /* SearchFoodNutrients.swift in Sources */,
 				EDB281062848C11A00BE7845 /* FruitsTableViewCell.swift in Sources */,
+				ED42B93D28498EF400B80CFF /* FruitsCollectionViewCell.swift in Sources */,
 				5D16DCCD2846E1F400A53201 /* SearchNutrient.swift in Sources */,
 				5D16DCBB2846AA8A00A53201 /* ViewControllerDetailView.swift in Sources */,
 				EDB2810A2848C87400BE7845 /* FoodIDSearch.swift in Sources */,
 				EDB281032848C07900BE7845 /* Fruits.swift in Sources */,
 				5D16DCA52846A3BF00A53201 /* KnowVegan.xcdatamodeld in Sources */,
 				5D16DC9D2846A3BF00A53201 /* SceneDelegate.swift in Sources */,
-				ED9CC8422848EDD00066B6DF /* Helpers.swift in Sources */,
 				EDB2810E2848CDDB00BE7845 /* Nutrient.swift in Sources */,
 				EDB2810C2848CA7A00BE7845 /* FruitNutrients.swift in Sources */,
 				5D16DCC92846D6B500A53201 /* SearchUSDA.swift in Sources */,
