@@ -8,6 +8,7 @@
 import Foundation
 
 struct Fruits{
+    
     let fruitName: String
     let fruitImage: String
 

@@ -28,6 +28,7 @@ class FruitsTableViewCell: UITableViewCell {
     // MARK: OUTLETS
 
     @IBOutlet var fruitsCollectionView: UICollectionView!
+    @IBOutlet weak var sectionName: UILabel!
     
     // MARK: ACTIONS
     
@@ -52,7 +53,6 @@ class FruitsTableViewCell: UITableViewCell {
         self.fruitModel = fruits
         fruitsCollectionView.reloadData()
     }
-    
 
     // MARK: OVERRIDES
     
@@ -84,11 +84,11 @@ extension FruitsTableViewCell: UICollectionViewDataSource, UICollectionViewDeleg
     }
     
     // COLLECTION VIEW LAYOUT
-    
+    /*
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 250, height: 250)
     }
-    
+    */
     
     
 }
