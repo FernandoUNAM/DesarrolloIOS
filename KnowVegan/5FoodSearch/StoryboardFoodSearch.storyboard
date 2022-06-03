@@ -21,9 +21,9 @@
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="7" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rio-4I-Fmt">
-                                <rect key="frame" x="107" y="113" width="200" height="21"/>
+                                <rect key="frame" x="57" y="113" width="300" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="200" id="RO9-TT-pxp"/>
+                                    <constraint firstAttribute="width" constant="300" id="RO9-TT-pxp"/>
                                     <constraint firstAttribute="height" constant="21" id="oMT-9N-gub"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>

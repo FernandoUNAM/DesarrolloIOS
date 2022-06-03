@@ -22,7 +22,11 @@ class ViewControllerFoodSearch: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "Busqueda"
-        Label1.text = "Elija el alimento"
+        
+
+        
+        
+        
         print (nameFood)
         SearchNewFood(food: nameFood)
         setUpTableView()
@@ -66,6 +70,9 @@ class ViewControllerFoodSearch: UIViewController {
             currencies = response.foods
             //Label1.text = "\(currencies[1])"
             
+            
+
+            
             reloadTableView()
             
         }catch {
@@ -104,7 +111,15 @@ class ViewControllerFoodSearch: UIViewController {
     }
 
     
-    
+    func labelShowResutls(){
+        if currencies.count == 0 {
+            Label1.text = "No se encuentran resultados"
+        }else {
+            
+            Label1.text = "Elija el alimento"
+        }
+        
+    }
     
 
 }
@@ -122,6 +137,9 @@ extension ViewControllerFoodSearch: UITableViewDataSource{
     
     // NUMBER OF CELL PER SECTION
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        labelShowResutls()
+        
         
         return currencies.count
         //return 6
