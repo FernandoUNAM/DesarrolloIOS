@@ -16,37 +16,44 @@ class FruitsTableViewCell: UITableViewCell {
     // MARK: CELL LIFE CYCLE
     override func awakeFromNib() {
         super.awakeFromNib()
-        setUpUI()
+        setUp()
         // Initialization code
     }
     
     // MARK: PROPERTIES
     
+    var fruitModel = [Fruits]()
+    static let identifier = "FruitsTableViewCell"
+    
     // MARK: OUTLETS
-    
-    @IBOutlet weak var fruitImage: UIImageView!
-    @IBOutlet weak var fruitName: UILabel!
-    
-    @IBOutlet weak var elementsCollectionView: UICollectionView!
+
+    @IBOutlet var fruitsCollectionView: UICollectionView!
+    @IBOutlet weak var sectionName: UILabel!
     
     // MARK: ACTIONS
     
     // MARK: FUNCTIONS
     
+    // NIB
+    
+    static func nib() -> UINib {
+        return UINib(nibName: "FruitsTableViewCell", bundle: nil)
+    }
+    
     // CELL'S INITIAL CONFIGURATION
-    func setUpUI(){
-        fruitImage.image = UIImage(named: "AppleFruit")
+    func setUp(){
+        fruitsCollectionView.register(FruitsCollectionViewCell.nib(), forCellWithReuseIdentifier: FruitsCollectionViewCell.identifier)
+        fruitsCollectionView.delegate = self
+        fruitsCollectionView.dataSource = self
     }
     
-    // SET UP CELL DATA WITH
+    // CELL'S SETUP WITH MODEL
     
-    func setUpCellWith(fruit: FoodIDSearch){
-        
-        fruitName.text = fruit.description
-        
+    func setUpWith(with fruits: [Fruits]){
+        self.fruitModel = fruits
+        fruitsCollectionView.reloadData()
     }
-    
-    
+
     // MARK: OVERRIDES
     
     // CELL SELECTION'S ANIMATION
@@ -57,21 +64,31 @@ class FruitsTableViewCell: UITableViewCell {
 
 // MARK: EXTENSIONS
 
-extension FruitsTableViewCell {
+extension FruitsTableViewCell: UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
     
-    var collectionViewOffset: CGFloat {
-        set { elementsCollectionView.contentOffset.x = newValue }
-        get { return elementsCollectionView.contentOffset.x }
+    // RETRIEVE OF COLLECTION CELLS
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FruitsCollectionViewCell.identifier, for: indexPath) as! FruitsCollectionViewCell
+        
+        cell.setUpWith(with: fruitModel[indexPath.row])
+        
+        return cell
     }
     
-    func setCollectionViewDataSourceDelegate<D: UICollectionViewDataSource & UICollectionViewDelegate>(_ dataSourceDelegate: D, forRow row: Int){
-        
-        elementsCollectionView.delegate = dataSourceDelegate
-        elementsCollectionView.dataSource = dataSourceDelegate
-        elementsCollectionView.tag = row
-        elementsCollectionView.setContentOffset(elementsCollectionView.contentOffset, animated: false)
-        elementsCollectionView.reloadData()
-        
+    // ELEMENTS PER COLLECTION VIES/TABLE VIEW CELL
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return fruitModel.count
     }
+    
+    // COLLECTION VIEW LAYOUT
+    /*
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 250, height: 250)
+    }
+    */
+    
     
 }
