@@ -17,14 +17,17 @@ class ViewControllerHomePage: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         loadFruits()
+        setUpGeneralInfo()
         setUpTableView()
         setUpUI()
+        
     }
-
     
     // MARK: CONSTANTS AND VARIABLES
-    var fruits: [FoodIDSearch] = []
+    
+    var fruits: [Fruits] = []
     var appleFruit: FoodIDSearch = FoodIDSearch(fdcId: 0, description: "", publicationDate: "", foodNutrients: [])
 
     
@@ -51,16 +54,23 @@ class ViewControllerHomePage: UIViewController {
         self.title = "INICIO"
     }
     
+    // APPEND OF WEB SERVICE ELEMENTS
     func setUpGeneralInfo(){
-        fruits.append(appleFruit)
+        fruits.append(Fruits(name: "Apple", image: "apple"))
+        fruits.append(Fruits(name: "PineApple", image: "pineapple"))
+        fruits.append(Fruits(name: "Mango", image: "mango"))
+        fruits.append(Fruits(name: "StrawBerry", image: "strawberry"))
+        fruits.append(Fruits(name: "WaterMelon", image: "watermelon"))
     }
     
+    // MAIN TABLEVIEW CONFIGURATION
     func setUpTableView(){
         
-        fruitsTableView.register(UINib(nibName: "FruitsTableViewCell", bundle: .main), forCellReuseIdentifier: "FruitTableViewCell")
+        fruitsTableView.register(FruitsTableViewCell.nib(), forCellReuseIdentifier: FruitsTableViewCell.identifier)
         
         // DATASOURCE WOULD BE THE TABLEVIEW ITSELF
         fruitsTableView.dataSource = self
+        fruitsTableView.delegate = self
         
     }
     
@@ -142,18 +152,22 @@ extension ViewControllerHomePage: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         // NUMBER OF ROWS IN SECTION
-        return fruits.count
+        return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "FruitTableViewCell", for: indexPath) as? FruitsTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: FruitsTableViewCell.identifier, for: indexPath) as? FruitsTableViewCell {
             
             // GO TROUGH ARRAY'S ITEMS AND ASSIGNS THEM TO A CELL RESPECTIVE ROW
-            cell.setUpCellWith(fruit: fruits[indexPath.row])
+            cell.setUpWith(with: fruits)
             
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 250.0
     }
     
 }
