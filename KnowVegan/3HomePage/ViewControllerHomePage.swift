@@ -71,7 +71,7 @@ class ViewControllerHomePage: UIViewController {
     // MAIN TABLEVIEW CONFIGURATION
     
     func setUpTableView(){
-        fruits1TableView.register(UINib(nibName: "Fruits1TableViewCell", bundle: nil), forCellReuseIdentifier: "Fruits1TableViewCell")
+        fruits1TableView.register(UINib(nibName: "Fruits1TableViewCell", bundle: .main), forCellReuseIdentifier: "Fruits1TableViewCell")
         // DATASOURCE WOULD BE THE TABLEVIEW ITSELF
         fruits1TableView.dataSource = self
         fruits1TableView.delegate = self

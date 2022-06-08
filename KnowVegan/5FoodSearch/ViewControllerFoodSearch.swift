@@ -101,8 +101,6 @@ class ViewControllerFoodSearch: UIViewController {
 
         let StoryboardDetailView  = UIStoryboard(name: "StoryboardDetailView", bundle: .main)
         if let ViewControllerDetailView = StoryboardDetailView.instantiateViewController(withIdentifier: "DetailViewVC") as? ViewControllerDetailView{
-            //ViewControllerSignUp.modalPresentationStyle = .fullScreen
-            //ViewControllerSignUp.string1 = "envio de informacion"
             ViewControllerDetailView.IDFrut = IDPass
             let navigationController = UINavigationController(rootViewController: ViewControllerDetailView)
             self.present(navigationController, animated: true)
