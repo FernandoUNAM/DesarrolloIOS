@@ -15,8 +15,12 @@ class ViewControllerHomePage: UIViewController {
     
     
     
-    @IBOutlet weak var FoodsField: UITextField!
     
+    
+    // MARK: OUTLETS
+    @IBOutlet weak var fruits1TableView: UITableView!
+    @IBOutlet weak var FoodSearchField: UITextField!
+    @IBOutlet weak var FoodsField: UITextField!
     
     
     // MARK: APP LIFE CYCLE
@@ -24,23 +28,16 @@ class ViewControllerHomePage: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         loadFruits()
-        setUpTableView()
+        setUpGeneralInfo()
         setUpUI()
+        setUpTableView()
     }
 
-    
     // MARK: CONSTANTS AND VARIABLES
-    var fruits: [FoodIDSearch] = []
+    
+    var fruits: [Fruits] = []
     var appleFruit: FoodIDSearch = FoodIDSearch(fdcId: 0, description: "", publicationDate: "", foodNutrients: [])
 
-    
-    // MARK: OUTLETS
-    @IBOutlet weak var fruitsTableView: UITableView!
-    
-    
-    
-    @IBOutlet weak var FoodSearchField: UITextField!
-    
     
     
     
@@ -50,8 +47,6 @@ class ViewControllerHomePage: UIViewController {
     @IBAction func ButtonDetailView(_ sender: Any) {
         let StoryboardDetailView  = UIStoryboard(name: "StoryboardDetailView", bundle: .main)
         if let ViewControllerDetailView = StoryboardDetailView.instantiateViewController(withIdentifier: "DetailViewVC") as? ViewControllerDetailView{
-            //ViewControllerSignUp.modalPresentationStyle = .fullScreen
-            //ViewControllerSignUp.string1 = "envio de informacion"
             let navigationController = UINavigationController(rootViewController: ViewControllerDetailView)
             self.present(navigationController, animated: true)
         }
@@ -64,26 +59,31 @@ class ViewControllerHomePage: UIViewController {
         self.title = "INICIO"
     }
     
+    // APPEND OF WEB SERVICE ELEMENTS
     func setUpGeneralInfo(){
-        fruits.append(appleFruit)
+        fruits.append(Fruits(name: "Apple", image: "Apple"))
+        fruits.append(Fruits(name: "PineApple", image: "Pineapple"))
+        fruits.append(Fruits(name: "Mango", image: "Mango"))
+        fruits.append(Fruits(name: "StrawBerry", image: "Strawberry"))
+        fruits.append(Fruits(name: "WaterMelon", image: "Watermelon"))
     }
     
+    // MAIN TABLEVIEW CONFIGURATION
+    
     func setUpTableView(){
-        
-        fruitsTableView.register(UINib(nibName: "FruitsTableViewCell", bundle: .main), forCellReuseIdentifier: "FruitTableViewCell")
-        
+        fruits1TableView.register(UINib(nibName: "Fruits1TableViewCell", bundle: nil), forCellReuseIdentifier: "Fruits1TableViewCell")
         // DATASOURCE WOULD BE THE TABLEVIEW ITSELF
-        fruitsTableView.dataSource = self
+        fruits1TableView.dataSource = self
+        fruits1TableView.delegate = self
+        
         
     }
+    
+    
     
     // LOAD FRUITS
     func loadFruits(){
-        
-        // https://api.nal.usda.gov/fdc/v1/food/1102644?api_key=JsGeeOLxpfxtZnGfQeNOBaWjJChkA0cxa3bQclSs
-        
-        // https://api.nal.usda.gov/fdc/v1/foods/search?api_key=JsGeeOLxpfxtZnGfQeNOBaWjJChkA0cxa3bQclSs&query=pineapple&dataType=SR%20Legacy&pageSize=5&pageNumber=1&sortBy=dataType.keyword&sortOrder=asc
-        
+
         // URL ASSIGNATION
         guard let url = URL(string: "https://api.nal.usda.gov/fdc/v1/food/1102644?api_key=JsGeeOLxpfxtZnGfQeNOBaWjJChkA0cxa3bQclSs") else {return}
         
@@ -140,7 +140,7 @@ class ViewControllerHomePage: UIViewController {
     func reloadTableView(){
         DispatchQueue.main.async {
             self.setUpGeneralInfo()
-            self.fruitsTableView.reloadData()
+            self.fruits1TableView.reloadData()
         }
     }
     
@@ -177,6 +177,8 @@ class ViewControllerHomePage: UIViewController {
 
 // MARK: EXTENSIONS
 
+// MARK: EXTENSIONS
+
 // TABLE VIEW DELEGATE MANIPULATOR AND DATASOURCE
 
 extension ViewControllerHomePage: UITableViewDelegate, UITableViewDataSource {
@@ -184,18 +186,22 @@ extension ViewControllerHomePage: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         // NUMBER OF ROWS IN SECTION
-        return fruits.count
+        return 3
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "FruitTableViewCell", for: indexPath) as? FruitsTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "Fruits1TableViewCell", for: indexPath) as? Fruits1TableViewCell {
             
             // GO TROUGH ARRAY'S ITEMS AND ASSIGNS THEM TO A CELL RESPECTIVE ROW
-            cell.setUpCellWith(fruit: fruits[indexPath.row])
+            cell.setUpWith(with: fruits)
             
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 250.0
     }
     
 }
