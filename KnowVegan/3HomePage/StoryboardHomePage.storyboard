@@ -33,46 +33,67 @@
                                     <action selector="FoodSearchField:" destination="Y6W-OH-hqX" eventType="editingDidEnd" id="oNE-92-KQT"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZu-jy-xcf">
-                                <rect key="frame" x="172.5" y="133" width="69" height="31"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Buscar"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eZu-jy-xcf">
+                                <rect key="frame" x="319" y="109" width="65" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="BEn-Ee-w8c"/>
+                                    <constraint firstAttribute="width" constant="65" id="qmk-Eo-EJi"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="Buscar" backgroundImage="Cuenta"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Buscar" cornerStyle="large">
+                                    <backgroundConfiguration key="background"/>
+                                    <fontDescription key="titleFontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
+                                </buttonConfiguration>
                                 <connections>
                                     <action selector="ButtonFoodSearch:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="rHh-KA-fp5"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Alimento a Buscar" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a7k-wj-xsD">
-                                <rect key="frame" x="25" y="74" width="364" height="34"/>
+                                <rect key="frame" x="25" y="109" width="274" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="34" id="al5-Iz-fbX"/>
+                                    <constraint firstAttribute="height" constant="40" id="CdM-ZC-R5c"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ZNZ-tQ-Qal">
-                                <rect key="frame" x="25" y="189" width="364" height="589"/>
+                                <rect key="frame" x="25" y="179" width="364" height="500"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="500" id="xmz-yB-0GN"/>
+                                </constraints>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="KNOW VEGAN" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gce-Vm-gQh">
+                                <rect key="frame" x="30" y="59" width="354" height="30"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="ZNZ-tQ-Qal" secondAttribute="trailing" constant="25" id="2CF-QL-bFD"/>
-                            <constraint firstItem="eZu-jy-xcf" firstAttribute="top" secondItem="a7k-wj-xsD" secondAttribute="bottom" constant="25" id="30j-FM-T3V"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="eZu-jy-xcf" secondAttribute="trailing" constant="30" id="6DK-x2-sBe"/>
+                            <constraint firstItem="Gce-Vm-gQh" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="30" id="98I-jX-cBD"/>
+                            <constraint firstItem="eZu-jy-xcf" firstAttribute="leading" secondItem="a7k-wj-xsD" secondAttribute="trailing" constant="20" id="DST-4A-2ul"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="pYu-b8-jSy" secondAttribute="trailing" constant="49" id="HCa-WQ-XHz"/>
+                            <constraint firstItem="a7k-wj-xsD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="ImM-3o-2dj"/>
+                            <constraint firstItem="eZu-jy-xcf" firstAttribute="top" secondItem="Gce-Vm-gQh" secondAttribute="bottom" constant="20" id="JRX-Fm-tne"/>
                             <constraint firstItem="ZNZ-tQ-Qal" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="SWk-Jt-N8W"/>
-                            <constraint firstItem="pYu-b8-jSy" firstAttribute="top" secondItem="ZNZ-tQ-Qal" secondAttribute="bottom" constant="25" id="YuT-Vk-4Gt"/>
-                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="a7k-wj-xsD" secondAttribute="trailing" constant="25" id="cts-5V-z42"/>
-                            <constraint firstItem="ZNZ-tQ-Qal" firstAttribute="top" secondItem="eZu-jy-xcf" secondAttribute="bottom" constant="25" id="mqc-OZ-3vY"/>
-                            <constraint firstItem="a7k-wj-xsD" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="25" id="wzQ-0a-ZvD"/>
-                            <constraint firstItem="eZu-jy-xcf" firstAttribute="centerX" secondItem="5EZ-qb-Rvc" secondAttribute="centerX" id="z1r-M9-gCc"/>
-                            <constraint firstItem="a7k-wj-xsD" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="30" id="z4S-60-LwM"/>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="Gce-Vm-gQh" secondAttribute="trailing" constant="30" id="TwW-II-sw8"/>
+                            <constraint firstItem="a7k-wj-xsD" firstAttribute="top" secondItem="Gce-Vm-gQh" secondAttribute="bottom" constant="20" id="XVO-Ie-sh5"/>
+                            <constraint firstItem="ZNZ-tQ-Qal" firstAttribute="top" secondItem="eZu-jy-xcf" secondAttribute="bottom" constant="30" id="aI8-hC-XIr"/>
+                            <constraint firstItem="Gce-Vm-gQh" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="15" id="mZx-rV-oDj"/>
                             <constraint firstItem="vDu-zF-Fre" firstAttribute="bottom" secondItem="pYu-b8-jSy" secondAttribute="bottom" constant="25" id="zOX-q8-Lqi"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="FoodsField" destination="a7k-wj-xsD" id="SaP-bp-zcT"/>
                         <outlet property="fruits1TableView" destination="ZNZ-tQ-Qal" id="R3t-KS-vUp"/>
+                        <outlet property="knowVeganTitleLabel" destination="Gce-Vm-gQh" id="uxU-lF-gXp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -81,6 +102,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Cuenta" width="50" height="50"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

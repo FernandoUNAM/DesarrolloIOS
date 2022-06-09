@@ -5,19 +5,28 @@
 //  Created by Donovan Z. Jaimes on 31/05/22.
 //
 
-// MARK: LIBRARIES
+// MARK: LIBRARIES & FRAMEWORKS
 
 import UIKit
 
-// MARK: MAIN CLASS
+// MARK: HOME PAGE VIEW CONTROLLER
 
 class ViewControllerHomePage: UIViewController {
     
+    // MARK: CONSTANTS AND VARIABLES
     
+    var fruits: [Fruits] = []
+    var appleFruit: FoodIDSearch = FoodIDSearch(fdcId: 0, description: "", publicationDate: "", foodNutrients: [])
     
+    let blackColorForString = [NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 18),NSAttributedString.Key.foregroundColor: UIColor.black]
+    let blueColorForString = [NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 18),NSAttributedString.Key.foregroundColor: UIColor.cyan]
     
-    
+    var knowString = NSMutableAttributedString()
+    var veganString = NSMutableAttributedString()
+
     // MARK: OUTLETS
+    
+    @IBOutlet weak var knowVeganTitleLabel: UILabel!
     @IBOutlet weak var fruits1TableView: UITableView!
     @IBOutlet weak var FoodSearchField: UITextField!
     @IBOutlet weak var FoodsField: UITextField!
@@ -31,16 +40,14 @@ class ViewControllerHomePage: UIViewController {
         setUpGeneralInfo()
         setUpUI()
         setUpTableView()
+        
+        knowString = NSMutableAttributedString(string: "KNOW", attributes: blackColorForString)
+        veganString = NSMutableAttributedString(string: "VEGAN", attributes: blueColorForString)
+        
+        knowString.append(veganString)
+        self.knowVeganTitleLabel.attributedText = knowString
     }
 
-    // MARK: CONSTANTS AND VARIABLES
-    
-    var fruits: [Fruits] = []
-    var appleFruit: FoodIDSearch = FoodIDSearch(fdcId: 0, description: "", publicationDate: "", foodNutrients: [])
-
-    
-    
-    
     // MARK: ACTIONS
     
     // DETAIL VIEW PRESENTATION
@@ -58,6 +65,8 @@ class ViewControllerHomePage: UIViewController {
     func setUpUI(){
         self.title = "INICIO"
     }
+    
+    // KNOW VEGAN TITLE SETUP
     
     // APPEND OF WEB SERVICE ELEMENTS
     func setUpGeneralInfo(){
