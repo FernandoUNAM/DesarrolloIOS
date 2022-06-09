@@ -20,29 +20,21 @@ class ViewControllerSignUp: UIViewController {
     @IBOutlet weak var ConfirmPasswordField: UITextField!
     @IBOutlet weak var WarningLabel: UILabel!
     
-    
+    let primaryColor = UIColor(red: 0.13, green: 0.57, blue: 0.64, alpha: 1.00)
     var string1: String = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.title = "REGISTRO"
-        
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.blue]
-        //self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(rgb: 2292A4)]
-        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: primaryColor]
         print (string1)
-        
         PasswordField.isSecureTextEntry = true
         ConfirmPasswordField.isSecureTextEntry = true
-        // Do any additional setup after loading the view.
+        setUpUI()
         
-        //NameField(title: "nombre")
-        //FloatingTextField(title: self.labels[index], text: self.$values[index])
     }
     
     @IBAction func ButtonHomePage(_ sender: Any) {
-        
-        
         
         guard let name = NameField.text, !name.isEmpty,
               let user = UserField.text, !user.isEmpty,
@@ -55,7 +47,7 @@ class ViewControllerSignUp: UIViewController {
             return}
         
         if password != CPassword {
-            WarningLabel.text = "ontraseñas incorrectas"
+            WarningLabel.text = "Contraseñas incorrectas"
             WarningLabel.textColor = .red
         }
         
@@ -68,7 +60,7 @@ class ViewControllerSignUp: UIViewController {
             PasswordField.text = ""
             ConfirmPasswordField.text = ""
             goToStoryboardHomePage()
-            WarningLabel.text = ""
+            WarningLabel.text = "Registro Correcto"
         }
 
     }
@@ -80,8 +72,8 @@ class ViewControllerSignUp: UIViewController {
         MailField.keyboardType = .emailAddress
         PasswordField.keyboardType = .default
         ConfirmPasswordField.keyboardType = .default
-        
-        
+        ButtonHomePage2.layer.cornerRadius = 24
+        ButtonHomePage2.backgroundColor = primaryColor
     }
     
     
