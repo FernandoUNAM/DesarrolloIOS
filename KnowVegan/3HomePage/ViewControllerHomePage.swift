@@ -15,12 +15,17 @@ class ViewControllerHomePage: UIViewController {
     
     // MARK: CONSTANTS AND VARIABLES
     
+    // DATA STRUCTURE API DATA RETRIEVERS
     var fruits: [Fruits] = []
     var appleFruit: FoodIDSearch = FoodIDSearch(fdcId: 0, description: "", publicationDate: "", foodNutrients: [])
     
-    let blackColorForString = [NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 18),NSAttributedString.Key.foregroundColor: UIColor.black]
-    let blueColorForString = [NSAttributedString.Key.font:UIFont.boldSystemFont(ofSize: 18),NSAttributedString.Key.foregroundColor: UIColor.cyan]
+    // COLOR STYLES
+
+    let primaryColor = UIColor(red: 0.13, green: 0.57, blue: 0.64, alpha: 1.00)
+    let blackColorForString = [NSAttributedString.Key.font:UIFont(name: "HelveticaNeue-Bold", size: 28),NSAttributedString.Key.foregroundColor: UIColor.black]
+    let blueColorForString = [NSAttributedString.Key.font:UIFont(name: "HelveticaNeue-Bold", size: 28),NSAttributedString.Key.foregroundColor: UIColor.init(red: 0.13, green: 0.57, blue: 0.64, alpha: 1.00)]
     
+    // TITLE STYLE
     var knowString = NSMutableAttributedString()
     var veganString = NSMutableAttributedString()
 
@@ -28,7 +33,6 @@ class ViewControllerHomePage: UIViewController {
     
     @IBOutlet weak var knowVeganTitleLabel: UILabel!
     @IBOutlet weak var fruits1TableView: UITableView!
-    @IBOutlet weak var FoodSearchField: UITextField!
     @IBOutlet weak var FoodsField: UITextField!
     
     
@@ -41,11 +45,13 @@ class ViewControllerHomePage: UIViewController {
         setUpUI()
         setUpTableView()
         
-        knowString = NSMutableAttributedString(string: "KNOW", attributes: blackColorForString)
-        veganString = NSMutableAttributedString(string: "VEGAN", attributes: blueColorForString)
+        knowString = NSMutableAttributedString(string: "KNOW ", attributes: blackColorForString as [NSAttributedString.Key : Any])
+        veganString = NSMutableAttributedString(string: "VEGAN", attributes: blueColorForString as [NSAttributedString.Key : Any])
         
         knowString.append(veganString)
         self.knowVeganTitleLabel.attributedText = knowString
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
     }
 
     // MARK: ACTIONS
@@ -209,8 +215,9 @@ extension ViewControllerHomePage: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
+    /*
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 250.0
     }
-    
+    */
 }

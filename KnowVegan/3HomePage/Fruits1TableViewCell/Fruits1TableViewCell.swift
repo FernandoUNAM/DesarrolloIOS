@@ -13,6 +13,17 @@ import UIKit
 
 class Fruits1TableViewCell: UITableViewCell {
 
+    // MARK: PROPERTIES
+    
+    var fruitModel = [Fruits]()
+    let primaryColor = UIColor(red: 0.13, green: 0.57, blue: 0.64, alpha: 1.00)
+
+    // MARK: OUTLETS
+
+    @IBOutlet weak var foodSectionLabel: UILabel!
+    @IBOutlet weak var strokeFrameLabel: UILabel!
+    @IBOutlet var fruits1CollectionView: UICollectionView!
+    
     // MARK: CELL LIFE CYCLE
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -20,15 +31,9 @@ class Fruits1TableViewCell: UITableViewCell {
         // Initialization code
     }
     
-    // MARK: PROPERTIES
-    
-    var fruitModel = [Fruits]()
-
-    // MARK: OUTLETS
-
-    @IBOutlet var fruits1CollectionView: UICollectionView!
-    
     // MARK: ACTIONS
+    
+    
     
     // MARK: FUNCTIONS
  
@@ -38,6 +43,16 @@ class Fruits1TableViewCell: UITableViewCell {
         fruits1CollectionView.register(Fruits1CollectionViewCell.nib(), forCellWithReuseIdentifier: Fruits1CollectionViewCell.identifier)
         fruits1CollectionView.delegate = self
         fruits1CollectionView.dataSource = self
+        fruits1CollectionView.layer.cornerRadius = 24
+        
+        
+        strokeFrameLabel.layer.cornerRadius = 24
+        strokeFrameLabel.layer.borderColor = primaryColor.cgColor
+        strokeFrameLabel.layer.borderWidth = 3
+        
+        foodSectionLabel.textColor = UIColor.gray
+        foodSectionLabel.font = UIFont.boldSystemFont(ofSize: 16)
+        
     }
     
     // CELL'S SETUP WITH MODEL
