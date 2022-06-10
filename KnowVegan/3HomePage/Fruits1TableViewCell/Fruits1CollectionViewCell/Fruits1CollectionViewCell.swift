@@ -1,9 +1,10 @@
 //
-//  FruitsCollectionViewCell.swift
+//  Fruits1CollectionViewCell.swift
 //  KnowVegan
 //
-//  Created by Luis Fernando Cuevas Cuauhtle on 2/6/22.
+//  Created by Luis Fernando Cuevas Cuauhtle on 7/6/22.
 //
+
 
 // MARK: LIBRARIES
 
@@ -11,7 +12,7 @@ import UIKit
 
 // MARK: MAIN CLASS
 
-class FruitsCollectionViewCell: UICollectionViewCell {
+class Fruits1CollectionViewCell: UICollectionViewCell {
 
     // MARK: APP LIFE CYCLE
     
@@ -23,7 +24,7 @@ class FruitsCollectionViewCell: UICollectionViewCell {
     // MARK: PROPERTIES (VARIABLES & CONSTANTS)
     
     // COLLECTION VIEW IDENTIIER
-    static let identifier = "FruitsCollectionViewCell"
+    static let identifier = "Fruits1CollectionViewCell"
     
     // MARK: OUTLETS
     
@@ -36,7 +37,7 @@ class FruitsCollectionViewCell: UICollectionViewCell {
     
     // COLLECTION VIEW CELL NIB
     static func nib() -> UINib {
-        return UINib(nibName: "FruitsCollectionViewCell", bundle: nil)
+        return UINib(nibName: "Fruits1CollectionViewCell", bundle: nil)
     }
     
     // COLLECTION VIEW CELL SETUP

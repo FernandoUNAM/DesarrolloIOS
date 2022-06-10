@@ -5,12 +5,22 @@
 //  Created by Donovan Z. Jaimes on 31/05/22.
 //
 
+// MARK: FRAMEWORKS & LIBRARIES
+
 import UIKit
+
+// MARK: SIGN UP STORYBOARD VIEW CONTROLLER
 
 class ViewControllerSignUp: UIViewController {
     
+    // MARK: PROPERTIES (VARIABLES & CONSTANTS)
     
     let dataManager = CoreDataManager()
+    let primaryColor = UIColor(red: 0.13, green: 0.57, blue: 0.64, alpha: 1.00)
+    var string1: String = ""
+    let viewsCornerRadious: CGFloat = 24
+    
+    // MARK: OUTLETS
     
     @IBOutlet weak var ButtonHomePage2: UIButton!
     @IBOutlet weak var NameField: UITextField!
@@ -20,29 +30,21 @@ class ViewControllerSignUp: UIViewController {
     @IBOutlet weak var ConfirmPasswordField: UITextField!
     @IBOutlet weak var WarningLabel: UILabel!
     
-    
-    var string1: String = ""
+    // MARK: MAIN FUNCTION OF APP LIFE CYCLE
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setUpUI()
         self.title = "REGISTRO"
-        
-        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.blue]
-        //self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor(rgb: 2292A4)]
-        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: primaryColor]
         print (string1)
-        
         PasswordField.isSecureTextEntry = true
         ConfirmPasswordField.isSecureTextEntry = true
-        // Do any additional setup after loading the view.
-        
-        //NameField(title: "nombre")
-        //FloatingTextField(title: self.labels[index], text: self.$values[index])
     }
     
+    // MARK: ACTIONS
+    
     @IBAction func ButtonHomePage(_ sender: Any) {
-        
-        
         
         guard let name = NameField.text, !name.isEmpty,
               let user = UserField.text, !user.isEmpty,
@@ -55,7 +57,7 @@ class ViewControllerSignUp: UIViewController {
             return}
         
         if password != CPassword {
-            WarningLabel.text = "ontraseñas incorrectas"
+            WarningLabel.text = "Contraseñas incorrectas"
             WarningLabel.textColor = .red
         }
         
@@ -68,11 +70,12 @@ class ViewControllerSignUp: UIViewController {
             PasswordField.text = ""
             ConfirmPasswordField.text = ""
             goToStoryboardHomePage()
-            WarningLabel.text = ""
+            WarningLabel.text = "Registro Correcto"
         }
 
     }
     
+    // MARK: FUNCTIONS
     
     func setUpUI(){
         NameField.keyboardType = .default
@@ -81,6 +84,13 @@ class ViewControllerSignUp: UIViewController {
         PasswordField.keyboardType = .default
         ConfirmPasswordField.keyboardType = .default
         
+        ButtonHomePage2.backgroundColor = primaryColor
+        ButtonHomePage2.layer.cornerRadius = viewsCornerRadious
+        NameField.layer.cornerRadius = viewsCornerRadious
+        UserField.layer.cornerRadius = viewsCornerRadious
+        MailField.layer.cornerRadius = viewsCornerRadious
+        PasswordField.layer.cornerRadius = viewsCornerRadious
+        ConfirmPasswordField.layer.cornerRadius = viewsCornerRadious
         
     }
     

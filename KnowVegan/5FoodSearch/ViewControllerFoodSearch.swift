@@ -23,10 +23,6 @@ class ViewControllerFoodSearch: UIViewController {
         super.viewDidLoad()
         self.title = "Busqueda"
         
-
-        
-        
-        
         print (nameFood)
         SearchNewFood(food: nameFood)
         setUpTableView()
@@ -101,8 +97,6 @@ class ViewControllerFoodSearch: UIViewController {
 
         let StoryboardDetailView  = UIStoryboard(name: "StoryboardDetailView", bundle: .main)
         if let ViewControllerDetailView = StoryboardDetailView.instantiateViewController(withIdentifier: "DetailViewVC") as? ViewControllerDetailView{
-            //ViewControllerSignUp.modalPresentationStyle = .fullScreen
-            //ViewControllerSignUp.string1 = "envio de informacion"
             ViewControllerDetailView.IDFrut = IDPass
             let navigationController = UINavigationController(rootViewController: ViewControllerDetailView)
             self.present(navigationController, animated: true)
@@ -114,9 +108,11 @@ class ViewControllerFoodSearch: UIViewController {
     func labelShowResutls(){
         if currencies.count == 0 {
             Label1.text = "No se encuentran resultados"
+            Label1.textColor = UIColor.systemRed
         }else {
             
-            Label1.text = "Elija el alimento"
+            Label1.text = "Alimentos Encontrados"
+            Label1.textColor = UIColor.black
         }
         
     }

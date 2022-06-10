@@ -5,56 +5,61 @@
 //  Created by Donovan Z. Jaimes on 31/05/22.
 //
 
-// MARK: LIBRARIES
+// MARK: LIBRARIES & FRAMEWORKS
 
 import UIKit
 
-// MARK: MAIN CLASS
+// MARK: HOME PAGE VIEW CONTROLLER
 
 class ViewControllerHomePage: UIViewController {
     
+    // MARK: CONSTANTS AND VARIABLES
     
+    // DATA STRUCTURE API DATA RETRIEVERS
+    var fruits: [Fruits] = []
+    var appleFruit: FoodIDSearch = FoodIDSearch(fdcId: 0, description: "", publicationDate: "", foodNutrients: [])
     
+    // COLOR STYLES
+
+    let primaryColor = UIColor(red: 0.13, green: 0.57, blue: 0.64, alpha: 1.00)
+    let blackColorForString = [NSAttributedString.Key.font:UIFont(name: "HelveticaNeue-Bold", size: 28),NSAttributedString.Key.foregroundColor: UIColor.black]
+    let blueColorForString = [NSAttributedString.Key.font:UIFont(name: "HelveticaNeue-Bold", size: 28),NSAttributedString.Key.foregroundColor: UIColor.init(red: 0.13, green: 0.57, blue: 0.64, alpha: 1.00)]
+    
+    // TITLE STYLE
+    var knowString = NSMutableAttributedString()
+    var veganString = NSMutableAttributedString()
+
+    // MARK: OUTLETS
+    
+    @IBOutlet weak var knowVeganTitleLabel: UILabel!
+    @IBOutlet weak var fruits1TableView: UITableView!
     @IBOutlet weak var FoodsField: UITextField!
-    
     
     
     // MARK: APP LIFE CYCLE
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        initialSetUp()
-        setUpTableView()
+        loadFruits()
         setUpGeneralInfo()
+        setUpUI()
+        setUpTableView()
         
+        knowString = NSMutableAttributedString(string: "KNOW ", attributes: blackColorForString as [NSAttributedString.Key : Any])
+        veganString = NSMutableAttributedString(string: "VEGAN", attributes: blueColorForString as [NSAttributedString.Key : Any])
+        
+        knowString.append(veganString)
+        self.knowVeganTitleLabel.attributedText = knowString
+        
+        self.navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
     }
-    
-    // MARK: CONSTANTS AND VARIABLES
-    
-    var fruits: [Fruits] = []
-    
-    var fruitsArray: [FoodIDSearch] = []
-    
-    var fruitItem: FoodIDSearch = FoodIDSearch(fdcId: 0, description: "", publicationDate: "", foodNutrients: [])
-    
-    
-    // MARK: OUTLETS
-    @IBOutlet weak var fruitsTableView: UITableView!
-    
-    
-    
-    @IBOutlet weak var FoodSearchField: UITextField!
-    
-    
-    
-    
+
     // MARK: ACTIONS
     
     // DETAIL VIEW PRESENTATION
     @IBAction func ButtonDetailView(_ sender: Any) {
         let StoryboardDetailView  = UIStoryboard(name: "StoryboardDetailView", bundle: .main)
         if let ViewControllerDetailView = StoryboardDetailView.instantiateViewController(withIdentifier: "DetailViewVC") as? ViewControllerDetailView{
-            
             let navigationController = UINavigationController(rootViewController: ViewControllerDetailView)
             self.present(navigationController, animated: true)
         }
@@ -63,53 +68,39 @@ class ViewControllerHomePage: UIViewController {
     // MARK: FUNCTIONS
     
     // INITIAL HOME PAGE CONFIGURATIONS
-    func initialSetUp(){
+    func setUpUI(){
         self.title = "INICIO"
-        
-        let fruitsIDs: [Int] = [168171,1102688,169910,167762,167765]
-        
-        var counter: Int = 1
-        
-        for fruitsID in fruitsIDs {
-            fruitsArray.append(loadFruits(foodId: fruitsID))
-            counter = counter + 1
-        }
-        
     }
+    
+    // KNOW VEGAN TITLE SETUP
     
     // APPEND OF WEB SERVICE ELEMENTS
     func setUpGeneralInfo(){
-        
-        print("\(fruitsArray[1].description)")
-        
-        fruits.append(Fruits(name: fruitsArray[1].description, image: "apple"))
-        fruits.append(Fruits(name: "PineApple", image: "pineapple"))
-        fruits.append(Fruits(name: "Mango", image: "mango"))
-        fruits.append(Fruits(name: "StrawBerry", image: "strawberry"))
-        fruits.append(Fruits(name: "WaterMelon", image: "watermelon"))
-        
+        fruits.append(Fruits(name: "Apple", image: "Apple"))
+        fruits.append(Fruits(name: "PineApple", image: "Pineapple"))
+        fruits.append(Fruits(name: "Mango", image: "Mango"))
+        fruits.append(Fruits(name: "StrawBerry", image: "Strawberry"))
+        fruits.append(Fruits(name: "WaterMelon", image: "Watermelon"))
     }
     
     // MAIN TABLEVIEW CONFIGURATION
+    
     func setUpTableView(){
-        
-        fruitsTableView.register(FruitsTableViewCell.nib(), forCellReuseIdentifier: FruitsTableViewCell.identifier)
-        
+        fruits1TableView.register(UINib(nibName: "Fruits1TableViewCell", bundle: .main), forCellReuseIdentifier: "Fruits1TableViewCell")
         // DATASOURCE WOULD BE THE TABLEVIEW ITSELF
-        fruitsTableView.dataSource = self
-        fruitsTableView.delegate = self
+        fruits1TableView.dataSource = self
+        fruits1TableView.delegate = self
+        
         
     }
     
+    
+    
     // LOAD FRUITS
-    func loadFruits(foodId: Int) -> FoodIDSearch{
-        
-        var item = FoodIDSearch(fdcId: 0, description: "", publicationDate: "", foodNutrients: [])
-        
+    func loadFruits(){
+
         // URL ASSIGNATION
-        guard let url = URL(string: "https://api.nal.usda.gov/fdc/v1/food/\(foodId)?api_key=JsGeeOLxpfxtZnGfQeNOBaWjJChkA0cxa3bQclSs") else {
-            return item
-        }
+        guard let url = URL(string: "https://api.nal.usda.gov/fdc/v1/food/1102644?api_key=JsGeeOLxpfxtZnGfQeNOBaWjJChkA0cxa3bQclSs") else {return}
         
         let task = URLSession.shared.dataTask(with: url) {data, response, error in
             
@@ -118,8 +109,7 @@ class ViewControllerHomePage: UIViewController {
                 print("DATA PACKAGE SIZE: \(data)")
                 print("DATA JSON STRING: \(String(decoding: data, as: UTF8.self))")
                 
-                item = self.decodeJSONResponse(data: data)
-            
+                self.decodeJSONResponse(data: data)
             }
             
             // UNWRAPS HTTPS RESPONSE CODE
@@ -134,21 +124,16 @@ class ViewControllerHomePage: UIViewController {
             // UWRAPS WEB SERVICE REQUEST ERROR CODE
             if let error = error {
                 print("WEB SERVICE REQUEST ERROR: \(error)")
-                
             }
-            
-            
             
         }
         
         // TASK RESUMES IN BACKGROUND
         task.resume()
-        return item
+        
     }
     
-    func decodeJSONResponse(data: Data) -> FoodIDSearch{
-        
-        var decodedItem = FoodIDSearch(fdcId: 0, description: "", publicationDate: "", foodNutrients: [])
+    func decodeJSONResponse(data: Data){
         
         do {
             
@@ -158,20 +143,19 @@ class ViewControllerHomePage: UIViewController {
             print("DECODED RESPONSE: \(results)")
             print("FRUITNAME: \(results.description)")
             
-            decodedItem = results
+            appleFruit = results
+
             
             reloadTableView()
-            
         } catch {
             print("DECODING PROCCESS ERROR: \(error)")
         }
-        return decodedItem
     }
     
     func reloadTableView(){
         DispatchQueue.main.async {
-            self.fruitsTableView.reloadData()
             self.setUpGeneralInfo()
+            self.fruits1TableView.reloadData()
         }
     }
     
@@ -208,6 +192,8 @@ class ViewControllerHomePage: UIViewController {
 
 // MARK: EXTENSIONS
 
+// MARK: EXTENSIONS
+
 // TABLE VIEW DELEGATE MANIPULATOR AND DATASOURCE
 
 extension ViewControllerHomePage: UITableViewDelegate, UITableViewDataSource {
@@ -219,19 +205,19 @@ extension ViewControllerHomePage: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: FruitsTableViewCell.identifier, for: indexPath) as? FruitsTableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "Fruits1TableViewCell", for: indexPath) as? Fruits1TableViewCell {
             
             // GO TROUGH ARRAY'S ITEMS AND ASSIGNS THEM TO A CELL RESPECTIVE ROW
-            cell.setUpWith(with: fruitsArray[indexPath.row])
+            cell.setUpWith(with: fruits)
             
             return cell
         }
         return UITableViewCell()
     }
+    
     /*
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 250.0
     }
-     */
-    
+    */
 }
